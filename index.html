@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation" />
+    <title>Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation</title>
+    <link rel="stylesheet" href="style.css?v=project-link-icons" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <header class="site-header" aria-labelledby="project-title">
+        <h1 id="project-title">Token-World</h1>
+        <p class="paper-subtitle">World Modeling in Vision-Language Model Token Space for Robot Manipulation</p>
+        <p class="authors">
+          <span>Chuyao Fu<sup>1,6</sup>,</span>
+          <span>Xiaowei Chi<sup>3,6</sup>,</span>
+          <span>Yuhan Rui<sup>1,6</sup>,</span>
+          <span>Yu-Kai Wang<sup>2,6</sup>,</span>
+          <span>Zezhong Qian<sup>2</sup>,</span>
+          <span>Xiaojie Zhang<sup>3</sup>,</span>
+          <span>Yunfan Lou<sup>2</sup>,</span>
+          <span>Kevin Zhang<sup>2,6</sup>,</span>
+          <span>Kuangzhi Ge<sup>2,6</sup>,</span>
+          <span>Chak Wing Mak<sup>2,6</sup>,</span>
+          <span>Zhiyang Chen<sup>2,6</sup>,</span>
+          <span>Athena Zhuoming Zhong<sup>5</sup>,</span>
+          <span>Hongyang Cheng<sup>2</sup>,</span>
+          <span>Haoran Li<sup>4</sup>,</span>
+          <span>Yike Guo<sup>3</sup>,</span>
+          <span>Sirui Han<sup>3</sup>,</span>
+          <span>Shanghang Zhang<sup aria-label="2, corresponding author">2✉&#xfe0e;</sup></span>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup> Southern University of Science and Technology</span>
+          <span><sup>2</sup> State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University</span>
+          <span><sup>3</sup> Hong Kong University of Science and Technology</span>
+          <span><sup>4</sup> Institute of Automation, Chinese Academy of Sciences</span>
+          <span><sup>5</sup> University of Pennsylvania</span>
+          <span><sup>6</sup> MUKA Robotics</span>
+        </p>
+        <p class="corresponding-author"><span aria-hidden="true">✉&#xfe0e;</span> Corresponding author: <a href="mailto:shanghang@pku.edu.cn">shanghang@pku.edu.cn</a></p>
+        <div class="header-links" aria-label="Project links">
+          <button class="text-link placeholder-link" type="button" disabled>
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z" />
+              <path d="M14 3v6h6M8 13h8M8 17h6" />
+            </svg>
+            <span>Paper</span>
+          </button>
+          <button class="text-link placeholder-link" type="button" disabled>
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 4l-4 16" />
+            </svg>
+            <span>Code (Coming Soon)</span>
+          </button>
+          <button class="text-link placeholder-link" type="button" disabled>
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="20" height="16" rx="4" />
+              <path d="m10 8 6 4-6 4Z" />
+            </svg>
+            <span>Video</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="section teaser-section" aria-labelledby="teaser-title">
+        <h2 id="teaser-title" class="sr-only">Teaser</h2>
+        <p class="teaser-question">Why generate pixels when the policy operates on VLM tokens?</p>
+        <figure class="figure-frame figure-frame--teaser" data-figure="assets/teaser.png">
+          <img src="assets/teaser.png" alt="Token-World teaser figure" loading="eager" />
+          <div class="figure-placeholder">Teaser figure placeholder<span>assets/teaser.png</span></div>
+          <figcaption class="figure-caption"><strong>Token-World simulates directly in compact VLM visual-token space.</strong> Unlike RGB-based world models that generate future images and re-encode them into policy inputs, Token-World models action-conditioned dynamics directly in compact VLM tokens. This design avoids intermediate RGB generation, reduces simulator step time to 0.359 s, and yields more reliable closed-loop policy evaluation (<i>r</i> = 0.794 vs. 0.583 for Ctrl-World).</figcaption>
+        </figure>
+      </section>
+
+      <section class="section" aria-labelledby="method-title">
+        <div class="section-heading">
+          <h2 id="method-title">Method Overview</h2>
+        </div>
+        <figure class="figure-frame figure-frame--method" data-figure="assets/method_overview.png">
+          <img src="assets/method_overview.png" alt="Token-World method overview" loading="eager" />
+          <div class="figure-placeholder">Method figure placeholder<span>assets/method_overview.png</span></div>
+          <figcaption class="figure-caption"><strong>Token-World overview.</strong> (a) <strong>Compact Token Construction.</strong> Qwen3-VL visual tokens are compressed into a compact latent space. (b) <strong>Dynamics Modeling.</strong> A spatiotemporal Transformer models action-conditioned dynamics in compact token space. (c) <strong>Training Objective.</strong> The model is trained with diffusion forcing and weighted flow matching. (d) <strong>Autoregressive Rollout.</strong> Future compact tokens are generated with a sliding temporal window and recurrent state.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section results-section" aria-labelledby="qualitative-title">
+        <div class="section-heading">
+          <h2 id="qualitative-title">Qualitative Results</h2>
+        </div>
+        <div id="qualitative-video-results" class="experiment-list"></div>
+      </section>
+
+      <section class="section" aria-labelledby="quantitative-title">
+        <div class="section-heading">
+          <h2 id="quantitative-title">Quantitative Results</h2>
+        </div>
+        <div class="quantitative-figures">
+          <figure class="figure-frame" data-figure="assets/open_loop_prediction.png">
+            <img src="assets/open_loop_prediction.png" alt="Open-loop comparison of VLM feature fidelity and policy-action consistency on RoboTwin and real-world Franka tasks, measured by cosine similarity and NMSE" loading="eager" />
+            <div class="figure-placeholder">Open-loop prediction figure placeholder<span>assets/open_loop_prediction.png</span></div>
+            <figcaption class="figure-caption"><strong>Open-loop prediction quality.</strong> Token-World achieves the strongest VLM feature fidelity and policy-action consistency across both RoboTwin and real-world Franka tasks, with higher cosine similarity and lower NMSE than RGB-based world models.</figcaption>
+          </figure>
+          <figure class="figure-frame" data-figure="assets/policy_evaluation_efficiency.png">
+            <img src="assets/policy_evaluation_efficiency.png" alt="Policy evaluation scatter plots comparing Token-World and Ctrl-World against reference success rates, alongside average simulation step times" loading="eager" />
+            <div class="figure-placeholder">Policy evaluation and efficiency figure placeholder<span>assets/policy_evaluation_efficiency.png</span></div>
+            <figcaption class="figure-caption"><strong>Policy evaluation and efficiency.</strong> Token-World’s predicted outcomes align more closely with actual policy success rates (<i>r</i> = 0.794 vs. 0.583 for Ctrl-World), while also achieving the fastest simulation speed at 0.359 s per step.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="ablation-title">
+        <div class="section-heading">
+          <h2 id="ablation-title">Ablations</h2>
+        </div>
+        <figure class="figure-frame" data-figure="assets/ablation.png">
+          <img src="assets/ablation.png" alt="Ablation studies comparing VLM and RGB VAE representations, raw and compressed VLM features, and compact latent dimensions of 8, 16, 32, and 48" loading="eager" />
+          <div class="figure-placeholder">Ablation figure placeholder<span>assets/ablation.png</span></div>
+          <figcaption class="figure-caption"><strong>Ablation studies.</strong> (a) VLM-based compact states improve both feature fidelity and action consistency over RGB VAE representations. (b) Compressing raw VLM features substantially improves dynamics prediction. (c) A 16-D compact representation provides the best overall trade-off between feature and action consistency.</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <script src="script.js?v=autoplay-loop" defer></script>
+  </body>
+</html>
