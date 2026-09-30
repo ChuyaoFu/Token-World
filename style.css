@@ -245,6 +245,12 @@ code {
   background: #fff;
 }
 
+.figure-frame--teaser img {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .figure-frame.is-loaded {
   display: block;
   min-height: 0;
