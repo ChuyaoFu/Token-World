@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation" />
     <title>Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation</title>
-    <link rel="stylesheet" href="style.css?v=larger-project-links" />
+    <link rel="stylesheet" href="style.css?v=abstract-layout" />
   </head>
   <body>
     <main class="site-shell">
@@ -77,22 +77,24 @@
 
       <section class="section teaser-section" aria-labelledby="teaser-title">
         <h2 id="teaser-title" class="sr-only">Teaser</h2>
-        <p class="teaser-question">Why generate pixels when the policy operates on VLM tokens?</p>
         <figure class="figure-frame figure-frame--teaser" data-figure="assets/teaser.png">
           <img src="assets/teaser.png" alt="Token-World teaser figure" loading="eager" />
           <div class="figure-placeholder">Teaser figure placeholder<span>assets/teaser.png</span></div>
-          <figcaption class="figure-caption"><strong>Token-World simulates directly in compact VLM visual-token space.</strong> Unlike RGB-based world models that generate future images and re-encode them into policy inputs, Token-World models action-conditioned dynamics directly in compact VLM tokens. This design avoids intermediate RGB generation, reduces simulator step time to 0.359 s, and yields more reliable closed-loop policy evaluation (<i>r</i> = 0.794 vs. 0.583 for Ctrl-World).</figcaption>
         </figure>
       </section>
 
-      <section class="section" aria-labelledby="method-title">
+      <section class="section abstract-section" aria-labelledby="abstract-title">
         <div class="section-heading">
-          <h2 id="method-title">Method Overview</h2>
+          <h2 id="abstract-title">Abstract</h2>
         </div>
+        <p class="abstract-text">A common approach to world-model simulation for vision-language-action (VLA) systems is to predict future RGB observations and then re-encode them into policy inputs, introducing an indirect interface between simulation and downstream policy execution. We instead investigate whether world dynamics can be modeled in a compact, policy-oriented state derived from VLM visual tokens. A key challenge is that raw VLM visual tokens are high-dimensional, making efficient and accurate autoregressive dynamics modeling challenging. To address this, we introduce Token-World, an action-conditioned world model that compresses VLM features into a compact token state, learns future dynamics in this reduced space, and maps predicted states back to the original policy-facing representation for downstream use. Across manipulation benchmarks, Token-World improves open-loop feature fidelity and policy-action consistency over recent world-model simulators, with slower degradation over long rollout horizons. In closed-loop evaluation, its simulated policy performance correlates more strongly with reference policy performance than Ctrl-World (<i>r</i> = 0.794 vs. 0.583), while requiring lower simulation latency. Ablations further show that compact-representation design and dimensionality substantially affect future-state prediction.</p>
+      </section>
+
+      <section class="section method-section" aria-labelledby="method-title">
+        <h2 id="method-title" class="sr-only">Method Overview</h2>
         <figure class="figure-frame figure-frame--method" data-figure="assets/method_overview.png">
           <img src="assets/method_overview.png" alt="Token-World method overview" loading="eager" />
           <div class="figure-placeholder">Method figure placeholder<span>assets/method_overview.png</span></div>
-          <figcaption class="figure-caption"><strong>Token-World overview.</strong> (a) <strong>Compact Token Construction.</strong> Qwen3-VL visual tokens are compressed into a compact latent space. (b) <strong>Dynamics Modeling.</strong> A spatiotemporal Transformer models action-conditioned dynamics in compact token space. (c) <strong>Training Objective.</strong> The model is trained with diffusion forcing and weighted flow matching. (d) <strong>Autoregressive Rollout.</strong> Future compact tokens are generated with a sliding temporal window and recurrent state.</figcaption>
         </figure>
       </section>
 
