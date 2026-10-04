@@ -152,23 +152,23 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  min-width: 104px;
-  min-height: 40px;
-  padding: 8px 16px;
+  gap: 10px;
+  min-width: 138px;
+  min-height: 54px;
+  padding: 12px 24px;
   border: 1px solid #cfcfcf;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #fafafa;
   color: var(--text);
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
   text-decoration: none;
@@ -177,8 +177,8 @@ h1 {
 .text-link:not(:disabled):hover { color: var(--accent); border-color: var(--accent); }
 
 .link-icon {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
 }
 
@@ -521,6 +521,9 @@ code {
   .corresponding-author { font-size: 0.875rem; }
   .institution-logos { gap: 12px 20px; }
   .institution-logo { width: 140px; height: 54px; }
+  .header-links { width: calc(100% - 32px); max-width: 380px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .text-link { min-width: 0; min-height: 48px; padding: 10px 8px; gap: 6px; font-size: 1rem; }
+  .link-icon { width: 20px; height: 20px; }
   .section { margin-top: 56px; }
   .teaser-section { margin-top: 0; }
   .figure-caption { font-size: 0.9rem; }
