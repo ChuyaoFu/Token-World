@@ -135,16 +135,15 @@ h1 {
 .affiliations span { max-width: 100%; }
 
 .corresponding-author {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
   width: var(--header-width);
   margin: 0 auto 28px;
   color: #555;
   font-size: 1rem;
   line-height: 1.6;
-}
-
-.corresponding-author a {
-  color: inherit;
-  text-underline-offset: 3px;
 }
 
 .placeholder-text { color: var(--placeholder-text); }
