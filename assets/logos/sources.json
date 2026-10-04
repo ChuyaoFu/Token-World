@@ -1,0 +1,27 @@
+{
+  "sustech.png": {
+    "page": "https://www.sustech.edu.cn/en/school_logo.html",
+    "download": "https://www.sustech.edu.cn/uploads/files/2022/07/14150332_92031.zip",
+    "note": "Original horizontal bilingual logo PNG from the official identity pack; empty margins framed with CSS."
+  },
+  "pku.png": {
+    "page": "https://www.pku.edu.cn/",
+    "download": "https://www.pku.edu.cn/Uploads/Picture/2019/12/26/s5e04176fbbfa3.png"
+  },
+  "casia.jpg": {
+    "page": "http://english.ia.cas.cn/",
+    "download": "http://english.ia.cas.cn/images/iacas_logo.jpg"
+  },
+  "penn.png": {
+    "page": "https://branding.web-resources.upenn.edu/logos-and-branding/download-penn-logos",
+    "download": "https://branding.web-resources.upenn.edu/sites/default/files/styles/card_3x2/public/2022-03/UniversityofPennsylvania_FullLogo_RGB-4_0.png?h=ab080a2f&itok=tu_jMFEm"
+  },
+  "muka.jpg": {
+    "source": "Original image supplied by the project author on 2026-10-03.",
+    "note": "Empty margins framed with CSS; original image unchanged."
+  },
+  "hkust.png": {
+    "page": "https://brand.hkust.edu.hk/",
+    "download": "https://brand.hkust.edu.hk/profiles/ust/modules/custom/hkust_signature_affiliate/assets/images/ust.png"
+  }
+}

@@ -25,11 +25,11 @@ body {
 }
 
 .site-shell {
-  padding: 64px 0 96px;
+  padding: 48px 0 96px;
 }
 
 .site-header {
-  --title-size: clamp(1.75rem, 2.35vw, 2.25rem);
+  --header-width: min(calc(100% - 64px), 1360px);
   width: 100%;
   margin: 0 auto 64px;
   text-align: center;
@@ -41,35 +41,71 @@ p,
 figure { margin-top: 0; }
 
 h1 {
-  width: calc(100% - 48px);
-  margin: 0 auto 12px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.6rem, 4vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1.2;
-  text-wrap: wrap;
-}
-
-.paper-subtitle {
-  width: calc(100% - 48px);
+  width: min(calc(100% - 64px), 1440px);
   margin: 0 auto 28px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: var(--title-size);
-  font-style: normal;
-  line-height: 1.4;
+  font-family: inherit;
+  font-size: clamp(2rem, 3.1vw, 2.75rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
   text-wrap: balance;
 }
 
 .authors {
-  width: var(--content-width);
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 18px;
-  font-size: 1.05rem;
-  line-height: 1.9;
+  width: var(--header-width);
+  margin: 0 auto 26px;
+  font-size: 1.375rem;
+  line-height: 1.8;
   text-wrap: balance;
 }
+
+.institution-logos {
+  width: var(--header-width);
+  margin: 0 auto 26px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 28px;
+}
+
+.institution-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 164px;
+  max-width: 100%;
+  height: 64px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.institution-logo img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.institution-logo--casia { width: 210px; }
+.institution-logo--hkust { width: 150px; }
+.institution-logo--penn { width: 150px; }
+
+/* Preserve the original artwork and frame only its surrounding empty space. */
+.institution-logo--sustech img,
+.institution-logo--penn img,
+.institution-logo--muka img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: none;
+  transform: translate(-50%, -50%);
+}
+
+.institution-logo--sustech img { width: 200%; }
+.institution-logo--muka img { width: 165%; }
+.institution-logo--penn img { width: 112%; }
 
 .authors span {
   display: inline-block;
@@ -83,7 +119,7 @@ h1 {
 }
 
 .affiliations {
-  width: var(--content-width);
+  width: var(--header-width);
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -92,17 +128,17 @@ h1 {
   gap: 6px 20px;
   margin-bottom: 12px;
   color: #555;
-  font-size: 0.85rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.65;
 }
 
 .affiliations span { max-width: 100%; }
 
 .corresponding-author {
-  width: var(--content-width);
+  width: var(--header-width);
   margin: 0 auto 28px;
   color: #555;
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -453,6 +489,14 @@ code {
   border: 0;
 }
 
+@media (min-width: 601px) and (max-width: 1239px) {
+  .institution-logos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 210px));
+  }
+  .institution-logo { justify-self: center; }
+}
+
 @media (max-width: 1000px) {
   :root {
     --content-width: min(80vw, 720px);
@@ -471,7 +515,13 @@ code {
   }
 
   .site-shell { padding-top: 40px; }
-  .site-header { margin-bottom: 48px; }
+  .site-header { --header-width: calc(100% - 32px); margin-bottom: 48px; }
+  h1 { width: var(--header-width); font-size: 1.75rem; margin-bottom: 24px; }
+  .authors { font-size: 1.125rem; line-height: 1.75; }
+  .affiliations { font-size: 1rem; gap: 8px 16px; }
+  .corresponding-author { font-size: 0.875rem; }
+  .institution-logos { gap: 12px 20px; }
+  .institution-logo { width: 140px; height: 54px; }
   .section { margin-top: 56px; }
   .teaser-section { margin-top: 0; }
   .figure-caption { font-size: 0.9rem; }
