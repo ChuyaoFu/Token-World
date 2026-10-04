@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation" />
     <title>Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation</title>
-    <link rel="stylesheet" href="style.css?v=abstract-layout" />
+    <link rel="stylesheet" href="style.css?v=reference-content-width" />
   </head>
   <body>
     <main class="site-shell">
@@ -95,6 +95,7 @@
         <figure class="figure-frame figure-frame--method" data-figure="assets/method_overview.png">
           <img src="assets/method_overview.png" alt="Token-World method overview" loading="eager" />
           <div class="figure-placeholder">Method figure placeholder<span>assets/method_overview.png</span></div>
+          <figcaption class="figure-caption"><strong>Token-World overview.</strong> (a) <strong>Compact Token Construction.</strong> Qwen3-VL visual tokens are compressed into a compact latent space. (b) <strong>Dynamics Modeling.</strong> A spatiotemporal Transformer models action-conditioned dynamics in compact token space. (c) <strong>Training Objective.</strong> The model is trained with diffusion forcing and weighted flow matching. (d) <strong>Autoregressive Rollout.</strong> Future compact tokens are generated with a sliding temporal window and recurrent state.</figcaption>
         </figure>
       </section>
 
