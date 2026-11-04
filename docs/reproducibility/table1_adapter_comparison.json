@@ -1,0 +1,333 @@
+{
+  "sample": {
+    "evaluated_episodes": 100,
+    "generated_frames": 22152,
+    "replay_chunks": 1524
+  },
+  "cross_segment_cache": "gru",
+  "per_task": {
+    "adjust_bottle": {
+      "feature_cosine": 0.7166491547743141,
+      "feature_nmse": 0.5812096179219548,
+      "action_cosine": 0.9106272440308092,
+      "action_nmse": 0.19580466198320867
+    },
+    "beat_block_hammer": {
+      "feature_cosine": 0.7979849051768382,
+      "feature_nmse": 0.40238794427248975,
+      "action_cosine": 0.9965076894359698,
+      "action_nmse": 0.007395807514339676
+    },
+    "blocks_ranking_rgb": {
+      "feature_cosine": 0.7443125768556988,
+      "feature_nmse": 0.532639925301436,
+      "action_cosine": 0.9602776704302478,
+      "action_nmse": 0.07949812837731275
+    },
+    "blocks_ranking_size": {
+      "feature_cosine": 0.7763674187355022,
+      "feature_nmse": 0.4666247905025784,
+      "action_cosine": 0.9197379119049969,
+      "action_nmse": 0.1560499007693419
+    },
+    "click_alarmclock": {
+      "feature_cosine": 0.7961963983973819,
+      "feature_nmse": 0.3753552164002658,
+      "action_cosine": 0.9937898904076552,
+      "action_nmse": 0.01355865716900566
+    },
+    "click_bell": {
+      "feature_cosine": 0.8284983824966017,
+      "feature_nmse": 0.3244164044984565,
+      "action_cosine": 0.9984497780382147,
+      "action_nmse": 0.0034655177737189916
+    },
+    "dump_bin_bigbin": {
+      "feature_cosine": 0.7832955367750296,
+      "feature_nmse": 0.43792790072809684,
+      "action_cosine": 0.9591731850967848,
+      "action_nmse": 0.07997876205932554
+    },
+    "grab_roller": {
+      "feature_cosine": 0.7696669897465811,
+      "feature_nmse": 0.4724763637496179,
+      "action_cosine": 0.9902308695669628,
+      "action_nmse": 0.020234260452736887
+    },
+    "handover_block": {
+      "feature_cosine": 0.7986176334464581,
+      "feature_nmse": 0.3730595238614343,
+      "action_cosine": 0.9266062602525097,
+      "action_nmse": 0.15246891573118798
+    },
+    "handover_mic": {
+      "feature_cosine": 0.7572414932549135,
+      "feature_nmse": 0.5121174436838984,
+      "action_cosine": 0.88956090539961,
+      "action_nmse": 0.2172544862978296
+    },
+    "hanging_mug": {
+      "feature_cosine": 0.7407555751362278,
+      "feature_nmse": 0.5300284839105402,
+      "action_cosine": 0.9604419976015379,
+      "action_nmse": 0.07706476321989203
+    },
+    "lift_pot": {
+      "feature_cosine": 0.805666187989035,
+      "feature_nmse": 0.37230700050263904,
+      "action_cosine": 0.9715411897645201,
+      "action_nmse": 0.06811767066061156
+    },
+    "move_can_pot": {
+      "feature_cosine": 0.8239757796965823,
+      "feature_nmse": 0.3318776239990137,
+      "action_cosine": 0.9914037867341239,
+      "action_nmse": 0.018354778110848152
+    },
+    "move_pillbottle_pad": {
+      "feature_cosine": 0.793192541546689,
+      "feature_nmse": 0.4393346471058863,
+      "action_cosine": 0.9931054818906304,
+      "action_nmse": 0.014196074919870759
+    },
+    "move_playingcard_away": {
+      "feature_cosine": 0.8043416462302178,
+      "feature_nmse": 0.37928781676461215,
+      "action_cosine": 0.9885237103888285,
+      "action_nmse": 0.023221243013158106
+    },
+    "move_stapler_pad": {
+      "feature_cosine": 0.7789510623250447,
+      "feature_nmse": 0.4539893187563839,
+      "action_cosine": 0.9868528891920699,
+      "action_nmse": 0.02815641399592133
+    },
+    "open_laptop": {
+      "feature_cosine": 0.7381680243977797,
+      "feature_nmse": 0.5393315471643363,
+      "action_cosine": 0.9940318139851514,
+      "action_nmse": 0.013434626460805512
+    },
+    "open_microwave": {
+      "feature_cosine": 0.7998468015336502,
+      "feature_nmse": 0.37883823864068367,
+      "action_cosine": 0.9940418334280215,
+      "action_nmse": 0.013065996268995904
+    },
+    "pick_diverse_bottles": {
+      "feature_cosine": 0.7302064539367012,
+      "feature_nmse": 0.5260676278692291,
+      "action_cosine": 0.9737904100751482,
+      "action_nmse": 0.05334525953736875
+    },
+    "pick_dual_bottles": {
+      "feature_cosine": 0.7227283074060865,
+      "feature_nmse": 0.533583969609032,
+      "action_cosine": 0.9499989949156806,
+      "action_nmse": 0.09191149612656871
+    },
+    "place_a2b_left": {
+      "feature_cosine": 0.7535426215569817,
+      "feature_nmse": 0.5125195991584406,
+      "action_cosine": 0.9751987175970349,
+      "action_nmse": 0.05064122909547925
+    },
+    "place_a2b_right": {
+      "feature_cosine": 0.7562364009410746,
+      "feature_nmse": 0.514037141956045,
+      "action_cosine": 0.9822897969271791,
+      "action_nmse": 0.03776673058293824
+    },
+    "place_bread_basket": {
+      "feature_cosine": 0.7826285794374193,
+      "feature_nmse": 0.4449060821145605,
+      "action_cosine": 0.9387656819634831,
+      "action_nmse": 0.1449465889160162
+    },
+    "place_bread_skillet": {
+      "feature_cosine": 0.7531119293575099,
+      "feature_nmse": 0.5011120269461398,
+      "action_cosine": 0.9574081511727208,
+      "action_nmse": 0.09747925250974265
+    },
+    "place_burger_fries": {
+      "feature_cosine": 0.7781119266292036,
+      "feature_nmse": 0.4431637986348809,
+      "action_cosine": 0.9708463904183948,
+      "action_nmse": 0.06460892060853253
+    },
+    "place_can_basket": {
+      "feature_cosine": 0.7782981008806669,
+      "feature_nmse": 0.44595268556898354,
+      "action_cosine": 0.9700621510229144,
+      "action_nmse": 0.05933999836223704
+    },
+    "place_cans_plasticbox": {
+      "feature_cosine": 0.7935671669950854,
+      "feature_nmse": 0.42620748723908264,
+      "action_cosine": 0.9619274834234457,
+      "action_nmse": 0.0839848856848806
+    },
+    "place_container_plate": {
+      "feature_cosine": 0.8138511550191662,
+      "feature_nmse": 0.4052128552634522,
+      "action_cosine": 0.9881807612790492,
+      "action_nmse": 0.025067636684301703
+    },
+    "place_dual_shoes": {
+      "feature_cosine": 0.7410250355893246,
+      "feature_nmse": 0.4928522200760443,
+      "action_cosine": 0.920178368203485,
+      "action_nmse": 0.18828139664194882
+    },
+    "place_empty_cup": {
+      "feature_cosine": 0.8138963274885764,
+      "feature_nmse": 0.38317223967815917,
+      "action_cosine": 0.9856256149489806,
+      "action_nmse": 0.029565458893630294
+    },
+    "place_fan": {
+      "feature_cosine": 0.7940935572098946,
+      "feature_nmse": 0.4035095784047211,
+      "action_cosine": 0.9904983695289742,
+      "action_nmse": 0.01971574496120871
+    },
+    "place_mouse_pad": {
+      "feature_cosine": 0.7738577515265629,
+      "feature_nmse": 0.46957356179065246,
+      "action_cosine": 0.9836623340632591,
+      "action_nmse": 0.03409257664671752
+    },
+    "place_object_basket": {
+      "feature_cosine": 0.7705127803878402,
+      "feature_nmse": 0.44041766373020014,
+      "action_cosine": 0.9120714219654847,
+      "action_nmse": 0.17428589705906164
+    },
+    "place_object_scale": {
+      "feature_cosine": 0.7836790140104303,
+      "feature_nmse": 0.4328123863051381,
+      "action_cosine": 0.9878752984432408,
+      "action_nmse": 0.025918226608466422
+    },
+    "place_object_stand": {
+      "feature_cosine": 0.7959099586928834,
+      "feature_nmse": 0.40955242875956965,
+      "action_cosine": 0.9923358127515677,
+      "action_nmse": 0.016482509649276077
+    },
+    "place_phone_stand": {
+      "feature_cosine": 0.8184272605440903,
+      "feature_nmse": 0.3401043512443549,
+      "action_cosine": 0.9865227566650346,
+      "action_nmse": 0.02758865675084534
+    },
+    "place_shoe": {
+      "feature_cosine": 0.8139973399940564,
+      "feature_nmse": 0.35103429854624457,
+      "action_cosine": 0.9881308900038943,
+      "action_nmse": 0.0240836328545614
+    },
+    "press_stapler": {
+      "feature_cosine": 0.7865643043335886,
+      "feature_nmse": 0.43119767417864513,
+      "action_cosine": 0.9940000273541325,
+      "action_nmse": 0.013546427079375548
+    },
+    "put_bottles_dustbin": {
+      "feature_cosine": 0.7239432539268078,
+      "feature_nmse": 0.5641720825424009,
+      "action_cosine": 0.9071307700930068,
+      "action_nmse": 0.20063757939524782
+    },
+    "put_object_cabinet": {
+      "feature_cosine": 0.7940087749783085,
+      "feature_nmse": 0.4056582124882165,
+      "action_cosine": 0.9812231765612873,
+      "action_nmse": 0.03798738595885832
+    },
+    "rotate_qrcode": {
+      "feature_cosine": 0.7517213343588562,
+      "feature_nmse": 0.5136359709925239,
+      "action_cosine": 0.9881527731075597,
+      "action_nmse": 0.02530137089668973
+    },
+    "scan_object": {
+      "feature_cosine": 0.7168307872735197,
+      "feature_nmse": 0.5843712992050918,
+      "action_cosine": 0.8262470139533116,
+      "action_nmse": 0.40500327050470064
+    },
+    "shake_bottle": {
+      "feature_cosine": 0.786625459866506,
+      "feature_nmse": 0.41070603107169057,
+      "action_cosine": 0.9908691376100178,
+      "action_nmse": 0.01805053945745502
+    },
+    "shake_bottle_horizontally": {
+      "feature_cosine": 0.8002929782094583,
+      "feature_nmse": 0.3648754262123296,
+      "action_cosine": 0.9943370109686946,
+      "action_nmse": 0.011073217956324852
+    },
+    "stack_blocks_three": {
+      "feature_cosine": 0.7902226138986262,
+      "feature_nmse": 0.4191617392200674,
+      "action_cosine": 0.979112617383993,
+      "action_nmse": 0.04310099272372493
+    },
+    "stack_blocks_two": {
+      "feature_cosine": 0.7983641442367448,
+      "feature_nmse": 0.4005752125640131,
+      "action_cosine": 0.9828023414449658,
+      "action_nmse": 0.03600605739775888
+    },
+    "stack_bowls_three": {
+      "feature_cosine": 0.7743194287377522,
+      "feature_nmse": 0.44561670434878226,
+      "action_cosine": 0.9587219652577499,
+      "action_nmse": 0.0839220473293136
+    },
+    "stack_bowls_two": {
+      "feature_cosine": 0.7609418755789548,
+      "feature_nmse": 0.4839266408841242,
+      "action_cosine": 0.9407980138690064,
+      "action_nmse": 0.12216826126135594
+    },
+    "stamp_seal": {
+      "feature_cosine": 0.7995833810238264,
+      "feature_nmse": 0.3907038365568661,
+      "action_cosine": 0.989899653062168,
+      "action_nmse": 0.020532309232815266
+    },
+    "turn_switch": {
+      "feature_cosine": 0.8110774811541959,
+      "feature_nmse": 0.3780131509468409,
+      "action_cosine": 0.9876637733548012,
+      "action_nmse": 0.026060225766025256
+    }
+  },
+  "metrics": {
+    "feature_cosine": {
+      "release_micro": 0.773141029327162,
+      "release_task_macro": 0.7783181118739049,
+      "paper_source_micro": 0.7714300468187644,
+      "release_micro_minus_source": 0.0017109825083976293
+    },
+    "feature_nmse": {
+      "release_micro": 0.4572619875690269,
+      "release_task_macro": 0.44343231583741693,
+      "paper_source_micro": 0.4891883938262605,
+      "release_micro_minus_source": -0.031926406257233586
+    },
+    "action_cosine": {
+      "release_micro": 0.9598345322103559,
+      "release_task_macro": 0.9672246357387663
+    },
+    "action_nmse": {
+      "release_micro": 0.07820785964005994,
+      "release_task_macro": 0.06947632895823078
+    }
+  },
+  "action_interface": "adapter"
+}

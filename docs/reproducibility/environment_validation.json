@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "shell-syntax": {
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/shell-syntax.log"
+    },
+    "svae-dry-run": {
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/svae-dry-run.log"
+    },
+    "world-model-dry-run": {
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/world-model-dry-run.log"
+    },
+    "ppu-device-query": {
+      "exit_code": 0,
+      "seconds": 3.38,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/ppu-device-query.log"
+    },
+    "cpu-regressions": {
+      "exit_code": 0,
+      "seconds": 8.52,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/cpu-regressions.log"
+    },
+    "open-loop-regressions": {
+      "exit_code": 0,
+      "seconds": 1.55,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/open-loop-regressions.log"
+    },
+    "svae-launch-help": {
+      "exit_code": 0,
+      "seconds": 8.29,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/svae-launch-help.log"
+    },
+    "world-model-launch-help": {
+      "exit_code": 0,
+      "seconds": 5.84,
+      "log": "/mnt/world_foundational_model/chuyao/TokenWorld-release-archive/ppu-env-xwqh4k70/world-model-launch-help.log"
+    }
+  },
+  "environment": "venv/environment.json",
+  "limitations": [
+    "No full S-VAE or world-model training launched",
+    "No multi-node or multi-process accelerator collective validated",
+    "PPU SDK and Python system packages must exist on each node"
+  ],
+  "inherited_package_note": "pip reported a pre-existing system vllm/setuptools version conflict; TokenWorld does not use vllm. Project import and regression checks pass."
+}

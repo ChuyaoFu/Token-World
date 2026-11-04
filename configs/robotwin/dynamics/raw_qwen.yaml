@@ -1,0 +1,96 @@
+data:
+  dataset_type: robotwin_svae
+  data_path: data/cache/robotwin_qwen_raw
+  latent_method: qwen_raw
+  tasks: null
+  outcomes:
+  - success
+  - failure
+  views:
+  - 0
+  normalize_latents: true
+  latent_stats_scope: per_view
+  normalize_action: true
+  verify_action_equals_state: true
+  num_hist: 4
+  num_pred: 16
+  random_window_per_episode: true
+  random_stride_min: 1
+  random_stride_max: 8
+  train_sequence_interval: 1
+  train_window_stride: 1
+  val_sequence_interval: 3
+  val_window_stride: 60
+  tail_align: true
+  lru_episodes: 8
+  frameskip: 1
+  addskip: 0
+  task_prompt: null
+model:
+  dim: 768
+  dim_latent: 2560
+  num_latent_tokens: 108
+  num_spatial_tokens: 108
+  spatial_grid_size:
+  - 9
+  - 12
+  num_agent_tokens: 1
+  num_video_views: 1
+  depth: 12
+  time_block_every: 3
+  original_discrete_actions:
+  - 2
+  - 2
+  original_continuous_actions: 12
+  dim_proprio: 14
+  max_steps: 64
+  attn_heads: 12
+  attn_dim_head: 64
+  use_adaln: false
+  use_idm: false
+  use_reward: false
+  prob_no_shortcut_train: 0.75
+  use_view_action_proj: false
+  use_multi_view_action_embed: false
+  use_time_rnn: true
+  pred_orig_latent: true
+  task_tokenizer:
+    enabled: false
+  task_cross_attn:
+    enabled: false
+    cross_attn_every: 1
+decoder:
+  emb_dim: 16
+  channel: 16
+  n_embed: 256
+  n_res_block: 4
+  n_res_channel: 128
+  quantize: false
+training:
+  batch_size: 8
+  mixed_precision: bf16
+  num_workers: 8
+  val_num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+  drop_last: false
+  find_unused_parameters: false
+  num_epochs: 100000000
+  max_train_steps: 100000
+  learning_rate: 6.0e-05
+  decoder_learning_rate: 0.0003
+  train_decoder: false
+  use_decoder: false
+  training_mode: world_model
+  external_decoder_path: null
+  dual_decoder:
+    enabled: false
+  checkpoint_every: null
+  checkpoint_every_steps: 10000
+  val_every: 1
+  viz_every: null
+  resume_from: null
+wandb:
+  enabled: false
+  project_name: tokenworld-robotwin-raw-vlm-all50-cam-high

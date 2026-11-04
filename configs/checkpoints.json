@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "scope": "RoboTwin",
+  "verified_utc_date": "2026-11-04",
+  "files": [
+    {
+      "component": "svae",
+      "path": "outputs/svae_d16_3views/best.pt",
+      "bytes": 1909450486,
+      "sha256": "2eb38012c38f161349ae113688959934de0adbfc3b669c2a02ae32332865ff6c"
+    },
+    {
+      "component": "world_model",
+      "path": "outputs/world_model_svae_d16_cam_high_100k/checkpoint_step_0100000.pt",
+      "bytes": 1498034990,
+      "sha256": "65e536a63e07192eb427351f11b9f904e738a0514d2bfae16e8e8af403289b30"
+    },
+    {
+      "component": "adapter",
+      "path": "outputs/deepstack_adapter_all50_20261031/adapter_best.pt",
+      "bytes": 46583417,
+      "sha256": "abc0c92ecad59f9fcfe8454d01b44d9572f4a77bcf3e3428482d78eb1edbf1e2"
+    },
+    {
+      "component": "rgb_decoder",
+      "path": "outputs/rgb_decoder_svae_d16_cam_high/decoder_epoch_0500.pt",
+      "bytes": 1184382887,
+      "sha256": "9e85e03e3b855703b0f0e898cdbc7b3b314cece97a1f85e9674207c75813e104"
+    }
+  ]
+}

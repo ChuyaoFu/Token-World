@@ -1,0 +1,72 @@
+# Aligned with original train_decoder_robotwin_svae_cam_high_8gpu.yaml.
+# batch_size is GLOBAL (32 trajectories; 4/rank on 8 PPUs), each with 20 frames.
+data:
+  raw_data_path: data/robotwin
+  svae_cache_dir: data/cache/robotwin_svae_d16
+  codec_checkpoint: outputs/svae_d16_3views/best.pt
+  codec_decode_batch_size: 32
+  latent_cache_dir: null
+  latent_method: symmetric_qwen
+  tasks: null
+  outcomes:
+  - success
+  - failure
+  views:
+  - 0
+  normalize_latents: true
+  normalize_action: true
+  verify_action_equals_state: true
+  num_hist: 4
+  num_pred: 16
+  random_window_per_episode: true
+  random_stride_min: 1
+  random_stride_max: 8
+  train_sequence_interval: 1
+  train_window_stride: 1
+  val_sequence_interval: 3
+  val_window_stride: 60
+  tail_align: true
+  lru_episodes: 8
+decoder:
+  _target_: tokenworld.decoder.model.VQGAN
+  in_channel: 3
+  emb_dim: 2560
+  channel: 256
+  channel_mult:
+  - 1
+  - 1
+  - 2
+  - 2
+  - 4
+  n_res_block: 2
+  resolution: 224
+  num_groups: 32
+  use_attention: true
+  grid_size:
+  - 9
+  - 12
+  input_norm: true
+training:
+  batch_size: 32
+  mixed_precision: bf16
+  num_workers: 4
+  val_num_workers: 2
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+  drop_last: true
+  num_epochs: 500
+  lr: 0.0003
+  weight_decay: 0.0
+  scheduler: cosine
+  lr_min: 1.0e-06
+  validation_every: 10
+logging:
+  checkpoint_dir: outputs/rgb_decoder_svae_d16_cam_high
+  checkpoint_every: 10
+  visualize_every: 10
+  num_vis_samples: 16
+  no_wandb: true
+  exp_name: robotwin_svae_decoded_vlm_cam_high_8gpu_b32
+seed: 42
+resume: null

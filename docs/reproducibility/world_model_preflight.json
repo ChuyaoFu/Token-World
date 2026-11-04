@@ -1,0 +1,188 @@
+{
+  "cache": "/mnt/world_foundational_model/chuyao/IRASim/cache/robotwin_all50_symmetric_qwen_svae_dim16_50hz",
+  "cache_records": 4999,
+  "splits": {
+    "train": 4499,
+    "val": 500
+  },
+  "all_index_files_present_and_nonempty": true,
+  "release_manifest_episode_assignments_match": true,
+  "cache_codec_sha256": "95f8a7f128b6ac966fe317dca0afe26c49bfb7159cbd749e5a4a361e2dccd821",
+  "reuse_basis": "Cache was exported using the original three-camera S-VAE; its state_dict was verified bitwise equal to the release three-camera checkpoint in the preceding comparison. This is reuse, not a new export.",
+  "source_model_decoder_training_config_equal": true,
+  "world_model_views": [
+    0
+  ],
+  "samples": {
+    "train": {
+      "windows": 4499,
+      "examples": [
+        {
+          "index": 0,
+          "shapes": {
+            "vlm_latents": [
+              20,
+              1,
+              108,
+              16
+            ],
+            "continuous_actions": [
+              19,
+              12
+            ],
+            "discrete_actions": [
+              19,
+              2
+            ],
+            "proprio": [
+              20,
+              14
+            ],
+            "rewards": [
+              20
+            ]
+          }
+        },
+        {
+          "index": 2249,
+          "shapes": {
+            "vlm_latents": [
+              20,
+              1,
+              108,
+              16
+            ],
+            "continuous_actions": [
+              19,
+              12
+            ],
+            "discrete_actions": [
+              19,
+              2
+            ],
+            "proprio": [
+              20,
+              14
+            ],
+            "rewards": [
+              20
+            ]
+          }
+        },
+        {
+          "index": 4498,
+          "shapes": {
+            "vlm_latents": [
+              20,
+              1,
+              108,
+              16
+            ],
+            "continuous_actions": [
+              19,
+              12
+            ],
+            "discrete_actions": [
+              19,
+              2
+            ],
+            "proprio": [
+              20,
+              14
+            ],
+            "rewards": [
+              20
+            ]
+          }
+        }
+      ]
+    },
+    "valid": {
+      "windows": 2058,
+      "examples": [
+        {
+          "index": 0,
+          "shapes": {
+            "vlm_latents": [
+              20,
+              1,
+              108,
+              16
+            ],
+            "continuous_actions": [
+              19,
+              12
+            ],
+            "discrete_actions": [
+              19,
+              2
+            ],
+            "proprio": [
+              20,
+              14
+            ],
+            "rewards": [
+              20
+            ]
+          }
+        },
+        {
+          "index": 1029,
+          "shapes": {
+            "vlm_latents": [
+              20,
+              1,
+              108,
+              16
+            ],
+            "continuous_actions": [
+              19,
+              12
+            ],
+            "discrete_actions": [
+              19,
+              2
+            ],
+            "proprio": [
+              20,
+              14
+            ],
+            "rewards": [
+              20
+            ]
+          }
+        },
+        {
+          "index": 2057,
+          "shapes": {
+            "vlm_latents": [
+              20,
+              1,
+              108,
+              16
+            ],
+            "continuous_actions": [
+              19,
+              12
+            ],
+            "discrete_actions": [
+              19,
+              2
+            ],
+            "proprio": [
+              20,
+              14
+            ],
+            "rewards": [
+              20
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "target_world_size": 8,
+  "batch_per_process": 32,
+  "max_train_steps": 100000,
+  "full_training_launched": false
+}

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "token-world"
+version = "0.1.0"
+description = "TokenWorld RoboTwin research release"
+readme = "README.md"
+requires-python = ">=3.10"
+license-files = ["LICENSE", "licenses/*.txt", "THIRD_PARTY_NOTICES.md"]
+dependencies = [
+  "torch>=2.4", "torchvision", "numpy", "Pillow", "PyYAML", "einops>=0.8.1",
+  "einx>=0.3.0", "accelerate", "adam-atan2-pytorch>=0.2.2", "assoc-scan",
+  "ema-pytorch", "hl-gauss-pytorch", "hyper-connections>=0.2.1",
+  "x-mlps-pytorch>=0.0.29", "vit-pytorch>=1.15.3", "tqdm"
+]
+
+[project.optional-dependencies]
+codec = ["transformers", "av", "pandas", "pyarrow", "safetensors"]
+eval = ["omegaconf", "opencv-python-headless", "scipy", "scikit-image"]
+tracking = ["wandb"]
+test = ["pytest", "build"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["tokenworld"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-p no:cacheprovider"

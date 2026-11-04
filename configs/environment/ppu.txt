@@ -1,0 +1,43 @@
+# The PPU SDK supplies these two packages through system-site-packages.  Keep
+# them constrained so pip never replaces them with official CUDA wheels.
+torch==2.6.0
+torchvision==0.21.0
+
+# TokenWorld runtime versions validated on ali-8card (Python 3.12, 2026-08-24).
+# assoc-scan >=0.0.4 currently requires accelerated-scan >=0.3, whose metadata
+# in turn requires Torch >=2.9; these versions retain the compatible Python
+# fallback used by TokenWorld's world-model training path.
+assoc-scan==0.0.3
+accelerated-scan==0.2.0
+accelerate==1.12.0
+adam-atan2-pytorch==0.4.0
+einops==0.8.2
+einx==0.4.3
+ema-pytorch==0.8.3
+hl-gauss-pytorch==0.2.6
+hyper-connections==0.4.11
+torch-einops-utils==0.1.21
+vit-pytorch==1.24.2
+x-mlps-pytorch==0.5.0
+
+# Tracking and shared-system-package compatibility.
+wandb==0.16.6
+protobuf==3.20.3
+packaging==24.2
+urllib3==1.26.16
+six==1.16.0
+
+# S-VAE/Qwen3-VL and dataset stack recovered from the working PPU environment.
+transformers==4.57.1
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+av==18.1.0
+numpy==1.26.0
+safetensors==0.7.0
+pandas==2.2.3
+pyarrow==22.0.0
+Pillow==12.1.0
+PyYAML==6.0.2
+tqdm==4.67.1
+opencv-python-headless==4.11.0.86
+scipy==1.11.3

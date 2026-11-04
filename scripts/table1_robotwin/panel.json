@@ -1,0 +1,706 @@
+{
+  "selection": "balanced_task_outcome",
+  "seed": 3047,
+  "episodes": [
+    {
+      "dataset": "robotwin_fail",
+      "task": "adjust_bottle",
+      "outcome": "failure",
+      "episode_index": 14,
+      "num_frames": 144
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "beat_block_hammer",
+      "outcome": "failure",
+      "episode_index": 56,
+      "num_frames": 111
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "blocks_ranking_rgb",
+      "outcome": "failure",
+      "episode_index": 100,
+      "num_frames": 479
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "blocks_ranking_size",
+      "outcome": "failure",
+      "episode_index": 156,
+      "num_frames": 449
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "click_alarmclock",
+      "outcome": "failure",
+      "episode_index": 201,
+      "num_frames": 97
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "click_bell",
+      "outcome": "failure",
+      "episode_index": 256,
+      "num_frames": 79
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "dump_bin_bigbin",
+      "outcome": "failure",
+      "episode_index": 308,
+      "num_frames": 342
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "grab_roller",
+      "outcome": "failure",
+      "episode_index": 362,
+      "num_frames": 99
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "handover_block",
+      "outcome": "failure",
+      "episode_index": 413,
+      "num_frames": 278
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "handover_mic",
+      "outcome": "failure",
+      "episode_index": 452,
+      "num_frames": 223
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "hanging_mug",
+      "outcome": "failure",
+      "episode_index": 505,
+      "num_frames": 333
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "lift_pot",
+      "outcome": "failure",
+      "episode_index": 561,
+      "num_frames": 114
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "move_can_pot",
+      "outcome": "failure",
+      "episode_index": 602,
+      "num_frames": 147
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "move_pillbottle_pad",
+      "outcome": "failure",
+      "episode_index": 651,
+      "num_frames": 149
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "move_playingcard_away",
+      "outcome": "failure",
+      "episode_index": 702,
+      "num_frames": 123
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "move_stapler_pad",
+      "outcome": "failure",
+      "episode_index": 754,
+      "num_frames": 153
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "open_laptop",
+      "outcome": "failure",
+      "episode_index": 803,
+      "num_frames": 282
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "open_microwave",
+      "outcome": "failure",
+      "episode_index": 851,
+      "num_frames": 268
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "pick_diverse_bottles",
+      "outcome": "failure",
+      "episode_index": 909,
+      "num_frames": 121
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "pick_dual_bottles",
+      "outcome": "failure",
+      "episode_index": 962,
+      "num_frames": 126
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_a2b_left",
+      "outcome": "failure",
+      "episode_index": 1001,
+      "num_frames": 151
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_a2b_right",
+      "outcome": "failure",
+      "episode_index": 1063,
+      "num_frames": 143
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_bread_basket",
+      "outcome": "failure",
+      "episode_index": 1100,
+      "num_frames": 236
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_bread_skillet",
+      "outcome": "failure",
+      "episode_index": 1156,
+      "num_frames": 160
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_burger_fries",
+      "outcome": "failure",
+      "episode_index": 1199,
+      "num_frames": 243
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_can_basket",
+      "outcome": "failure",
+      "episode_index": 1249,
+      "num_frames": 247
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_cans_plasticbox",
+      "outcome": "failure",
+      "episode_index": 1299,
+      "num_frames": 289
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_container_plate",
+      "outcome": "failure",
+      "episode_index": 1350,
+      "num_frames": 155
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_dual_shoes",
+      "outcome": "failure",
+      "episode_index": 1404,
+      "num_frames": 293
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_empty_cup",
+      "outcome": "failure",
+      "episode_index": 1452,
+      "num_frames": 169
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_fan",
+      "outcome": "failure",
+      "episode_index": 1511,
+      "num_frames": 136
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_mouse_pad",
+      "outcome": "failure",
+      "episode_index": 1553,
+      "num_frames": 147
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_object_basket",
+      "outcome": "failure",
+      "episode_index": 1608,
+      "num_frames": 245
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_object_scale",
+      "outcome": "failure",
+      "episode_index": 1650,
+      "num_frames": 145
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_object_stand",
+      "outcome": "failure",
+      "episode_index": 1708,
+      "num_frames": 138
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_phone_stand",
+      "outcome": "failure",
+      "episode_index": 1758,
+      "num_frames": 126
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "place_shoe",
+      "outcome": "failure",
+      "episode_index": 1804,
+      "num_frames": 177
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "press_stapler",
+      "outcome": "failure",
+      "episode_index": 1868,
+      "num_frames": 118
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "put_bottles_dustbin",
+      "outcome": "failure",
+      "episode_index": 1927,
+      "num_frames": 825
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "put_object_cabinet",
+      "outcome": "failure",
+      "episode_index": 1954,
+      "num_frames": 272
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "rotate_qrcode",
+      "outcome": "failure",
+      "episode_index": 2010,
+      "num_frames": 149
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "scan_object",
+      "outcome": "failure",
+      "episode_index": 2057,
+      "num_frames": 164
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "shake_bottle",
+      "outcome": "failure",
+      "episode_index": 2115,
+      "num_frames": 246
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "shake_bottle_horizontally",
+      "outcome": "failure",
+      "episode_index": 2149,
+      "num_frames": 282
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "stack_blocks_three",
+      "outcome": "failure",
+      "episode_index": 2223,
+      "num_frames": 481
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "stack_blocks_two",
+      "outcome": "failure",
+      "episode_index": 2255,
+      "num_frames": 295
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "stack_bowls_three",
+      "outcome": "failure",
+      "episode_index": 2314,
+      "num_frames": 493
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "stack_bowls_two",
+      "outcome": "failure",
+      "episode_index": 2357,
+      "num_frames": 319
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "stamp_seal",
+      "outcome": "failure",
+      "episode_index": 2412,
+      "num_frames": 143
+    },
+    {
+      "dataset": "robotwin_fail",
+      "task": "turn_switch",
+      "outcome": "failure",
+      "episode_index": 2463,
+      "num_frames": 101
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "adjust_bottle",
+      "outcome": "success",
+      "episode_index": 0,
+      "num_frames": 140
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "beat_block_hammer",
+      "outcome": "success",
+      "episode_index": 52,
+      "num_frames": 113
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "blocks_ranking_rgb",
+      "outcome": "success",
+      "episode_index": 102,
+      "num_frames": 463
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "blocks_ranking_size",
+      "outcome": "success",
+      "episode_index": 151,
+      "num_frames": 458
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "click_alarmclock",
+      "outcome": "success",
+      "episode_index": 208,
+      "num_frames": 93
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "click_bell",
+      "outcome": "success",
+      "episode_index": 250,
+      "num_frames": 81
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "dump_bin_bigbin",
+      "outcome": "success",
+      "episode_index": 303,
+      "num_frames": 326
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "grab_roller",
+      "outcome": "success",
+      "episode_index": 354,
+      "num_frames": 101
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "handover_block",
+      "outcome": "success",
+      "episode_index": 419,
+      "num_frames": 275
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "handover_mic",
+      "outcome": "success",
+      "episode_index": 450,
+      "num_frames": 225
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "hanging_mug",
+      "outcome": "success",
+      "episode_index": 503,
+      "num_frames": 338
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "lift_pot",
+      "outcome": "success",
+      "episode_index": 554,
+      "num_frames": 109
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "move_can_pot",
+      "outcome": "success",
+      "episode_index": 602,
+      "num_frames": 147
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "move_pillbottle_pad",
+      "outcome": "success",
+      "episode_index": 651,
+      "num_frames": 149
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "move_playingcard_away",
+      "outcome": "success",
+      "episode_index": 708,
+      "num_frames": 117
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "move_stapler_pad",
+      "outcome": "success",
+      "episode_index": 760,
+      "num_frames": 140
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "open_laptop",
+      "outcome": "success",
+      "episode_index": 804,
+      "num_frames": 223
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "open_microwave",
+      "outcome": "success",
+      "episode_index": 851,
+      "num_frames": 451
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "pick_diverse_bottles",
+      "outcome": "success",
+      "episode_index": 905,
+      "num_frames": 126
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "pick_dual_bottles",
+      "outcome": "success",
+      "episode_index": 957,
+      "num_frames": 123
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_a2b_left",
+      "outcome": "success",
+      "episode_index": 1009,
+      "num_frames": 156
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_a2b_right",
+      "outcome": "success",
+      "episode_index": 1058,
+      "num_frames": 146
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_bread_basket",
+      "outcome": "success",
+      "episode_index": 1109,
+      "num_frames": 161
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_bread_skillet",
+      "outcome": "success",
+      "episode_index": 1154,
+      "num_frames": 169
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_burger_fries",
+      "outcome": "success",
+      "episode_index": 1206,
+      "num_frames": 241
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_can_basket",
+      "outcome": "success",
+      "episode_index": 1269,
+      "num_frames": 250
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_cans_plasticbox",
+      "outcome": "success",
+      "episode_index": 1310,
+      "num_frames": 290
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_container_plate",
+      "outcome": "success",
+      "episode_index": 1351,
+      "num_frames": 155
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_dual_shoes",
+      "outcome": "success",
+      "episode_index": 1403,
+      "num_frames": 269
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_empty_cup",
+      "outcome": "success",
+      "episode_index": 1453,
+      "num_frames": 169
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_fan",
+      "outcome": "success",
+      "episode_index": 1501,
+      "num_frames": 160
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_mouse_pad",
+      "outcome": "success",
+      "episode_index": 1553,
+      "num_frames": 152
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_object_basket",
+      "outcome": "success",
+      "episode_index": 1609,
+      "num_frames": 245
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_object_scale",
+      "outcome": "success",
+      "episode_index": 1660,
+      "num_frames": 141
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_object_stand",
+      "outcome": "success",
+      "episode_index": 1710,
+      "num_frames": 141
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_phone_stand",
+      "outcome": "success",
+      "episode_index": 1760,
+      "num_frames": 125
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "place_shoe",
+      "outcome": "success",
+      "episode_index": 1801,
+      "num_frames": 180
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "press_stapler",
+      "outcome": "success",
+      "episode_index": 1881,
+      "num_frames": 119
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "put_bottles_dustbin",
+      "outcome": "success",
+      "episode_index": 1913,
+      "num_frames": 657
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "put_object_cabinet",
+      "outcome": "success",
+      "episode_index": 1959,
+      "num_frames": 266
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "rotate_qrcode",
+      "outcome": "success",
+      "episode_index": 2000,
+      "num_frames": 153
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "scan_object",
+      "outcome": "success",
+      "episode_index": 2053,
+      "num_frames": 163
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "shake_bottle",
+      "outcome": "success",
+      "episode_index": 2116,
+      "num_frames": 246
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "shake_bottle_horizontally",
+      "outcome": "success",
+      "episode_index": 2151,
+      "num_frames": 280
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "stack_blocks_three",
+      "outcome": "success",
+      "episode_index": 2204,
+      "num_frames": 479
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "stack_blocks_two",
+      "outcome": "success",
+      "episode_index": 2252,
+      "num_frames": 312
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "stack_bowls_three",
+      "outcome": "success",
+      "episode_index": 2303,
+      "num_frames": 453
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "stack_bowls_two",
+      "outcome": "success",
+      "episode_index": 2355,
+      "num_frames": 318
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "stamp_seal",
+      "outcome": "success",
+      "episode_index": 2416,
+      "num_frames": 153
+    },
+    {
+      "dataset": "robotwin_success",
+      "task": "turn_switch",
+      "outcome": "success",
+      "episode_index": 2453,
+      "num_frames": 100
+    }
+  ]
+}

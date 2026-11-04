@@ -1,0 +1,127 @@
+{
+  "stage": "single_package_layout_verified",
+  "gpu_training_or_checkpoint_evaluation_run": false,
+  "pytest": {
+    "exit_code": 0,
+    "passed": 22
+  },
+  "entrypoint_and_regression_checks": [
+    {
+      "check": "open_loop_regressions",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.codec.train",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.data.export_svae",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.data.export_raw",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.data.audit",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.dynamics.train",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.decoder.train",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.evaluation.open_loop",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.evaluation.closed_loop",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.evaluation.prepare_manifest",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.evaluation.aggregate",
+      "exit_code": 0
+    },
+    {
+      "check": "tokenworld.evaluation.representation",
+      "exit_code": 0
+    }
+  ],
+  "migration_parity": {
+    "state_dict_keys_and_tensors_equal": [
+      "dynamics",
+      "codec",
+      "codec_decoder",
+      "rgb_decoder"
+    ],
+    "outputs_bitwise_equal": [
+      "dynamics_loss",
+      "codec_mean",
+      "codec_decoded",
+      "rgb"
+    ],
+    "paper_checkpoint_used": false
+  },
+  "package": {
+    "wheel_build_passed": true,
+    "only_tokenworld_namespace": true,
+    "outside_source_import_passed": true,
+    "file_count": 55,
+    "licenses": [
+      "token_world-0.1.0.dev0.dist-info/licenses/LICENSE",
+      "token_world-0.1.0.dev0.dist-info/licenses/THIRD_PARTY_NOTICES.md",
+      "token_world-0.1.0.dev0.dist-info/licenses/licenses/IRASim-Apache-2.0.txt",
+      "token_world-0.1.0.dev0.dist-info/licenses/licenses/StarVLA-MIT.txt"
+    ]
+  },
+  "svae_training_and_validation_video_keys": [
+    "observation.images.cam_high"
+  ],
+  "raw_logs": "Archived outside the release repository.",
+  "training_launchers": {
+    "checks": [
+      "train_svae.sh: syntax/help/invalid arguments",
+      "train_world_model.sh: syntax/help/invalid arguments",
+      "svae: 1 processes; dry-run; native parser; resume/space quoting; cwd",
+      "wm: 1 processes; dry-run; native parser; resume/space quoting; cwd",
+      "svae: 4 processes; dry-run; native parser; resume/space quoting; cwd",
+      "wm: 4 processes; dry-run; native parser; resume/space quoting; cwd",
+      "training exit status propagated"
+    ],
+    "passed": true,
+    "training_started": false,
+    "accelerate_version": "1.12.0"
+  },
+  "training_defaults_audit": {
+    "report": "training_defaults.json",
+    "svae_plan_only_passed": true,
+    "readme_bash_blocks_syntax_passed": 8,
+    "both_launchers_dry_run_passed": true,
+    "gpu_training_started": false
+  },
+  "ppu_environment": {
+    "report": "environment_validation.json",
+    "python": "venv/bin/python",
+    "setup": "scripts/setup_env.sh",
+    "system_torch_preserved": true,
+    "repeat_install_passed": true,
+    "training_started": false
+  },
+  "world_model_reproduction_entrypoints": {
+    "workflow": "scripts/reproduce_world_model.sh",
+    "cache_checker": "scripts/check_world_model_cache.py",
+    "workflow_tests_passed": 10,
+    "existing_cache_check_passed": true,
+    "indexed_files": 4999,
+    "sampled_windows_checked": 6,
+    "full_training_launched": false
+  }
+}

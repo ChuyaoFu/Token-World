@@ -1,0 +1,12 @@
+{
+  "wheel_build_passed": true,
+  "only_tokenworld_namespace": true,
+  "outside_source_import_passed": true,
+  "file_count": 55,
+  "licenses": [
+    "token_world-0.1.0.dev0.dist-info/licenses/LICENSE",
+    "token_world-0.1.0.dev0.dist-info/licenses/THIRD_PARTY_NOTICES.md",
+    "token_world-0.1.0.dev0.dist-info/licenses/licenses/IRASim-Apache-2.0.txt",
+    "token_world-0.1.0.dev0.dist-info/licenses/licenses/StarVLA-MIT.txt"
+  ]
+}

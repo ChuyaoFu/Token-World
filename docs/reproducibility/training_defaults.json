@@ -1,0 +1,91 @@
+{
+  "world_model": {
+    "reference": "TokenWorld/configs/tokenworld_robotwin_svae_d16_all50_cam_high_8gpu_100k.yaml",
+    "reference_sha256": "e8d5a493c45ce7434ede9965b4cfdec43a16d7528bdfa1bbb03396b5225e11db",
+    "model_decoder_training_fields_match": true,
+    "intentional_yaml_differences": [
+      "data.data_path",
+      "wandb.enabled (true -> false)"
+    ],
+    "reference_is_not_16_process_unlimited_resume_recipe": true,
+    "entrypoint_sets_global_seed": false
+  },
+  "svae": {
+    "reference": "IRASim/results/svae/robotwin_all50_symmetric_qwen_svae_dim16_seed3047/training_plan.json",
+    "reference_sha256": "919c61a6a2a1334192b6364d29e2900a2e1a9a027c7405435c6297de7d5db149",
+    "matching_run_fields": [
+      "world_size",
+      "batch_size_per_gpu",
+      "global_batch_size",
+      "epochs",
+      "learning_rate",
+      "weight_decay",
+      "max_grad_norm",
+      "image_size",
+      "seed",
+      "train_frames_per_episode",
+      "val_frames_per_episode",
+      "codec_config",
+      "posterior"
+    ],
+    "matching_values": {
+      "world_size": 8,
+      "batch_size_per_gpu": 8,
+      "global_batch_size": 64,
+      "epochs": 1,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0,
+      "max_grad_norm": 1.0,
+      "image_size": [
+        288,
+        384
+      ],
+      "seed": 3047,
+      "train_frames_per_episode": 0,
+      "val_frames_per_episode": 8,
+      "codec_config": {
+        "method": "symmetric_qwen",
+        "input_dim": 2560,
+        "native_tokens": 108,
+        "tokens_per_view": 108,
+        "token_dim": 16,
+        "model_dim": 384,
+        "depth": 3,
+        "num_heads": 16,
+        "grid_size": [
+          9,
+          12
+        ],
+        "latent_grid_size": [
+          9,
+          12
+        ],
+        "projection_hidden_dim": 1024,
+        "kl_weight": 1e-06,
+        "pixel_output_size": [
+          96,
+          128
+        ]
+      },
+      "posterior": "sample_for_training_mean_for_validation_and_export"
+    },
+    "historical_view_count_inferred_from_plan": 3,
+    "release_video_keys": [
+      "observation.images.cam_high"
+    ],
+    "historical_steps_per_epoch": [
+      46143
+    ],
+    "release_steps_per_epoch": [
+      15381
+    ],
+    "train_episodes": 4499,
+    "validation_episodes": 500,
+    "train_frames": 984003,
+    "camera_change_is_user_requested": true,
+    "identical_historical_training_budget": false
+  },
+  "manifest_episode_assignments_equal": true,
+  "gpu_training_started": false,
+  "paper_checkpoint_mapping_verified": false
+}

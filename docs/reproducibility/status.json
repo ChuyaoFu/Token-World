@@ -1,0 +1,113 @@
+{
+  "stage": "curated_release_candidate",
+  "scope": {
+    "dataset": "RoboTwin",
+    "paper_plots": false,
+    "checkpoint_selection": "deferred_by_user",
+    "source_workspace_modified": false,
+    "svae_training_views": [
+      "cam_high"
+    ]
+  },
+  "data": {
+    "expected_in_paper": 5000,
+    "available": 4999,
+    "train": 4499,
+    "validation": 500,
+    "difference": "place_a2b_left/failure has 44 train plus 5 validation episodes",
+    "publication_decision": "pending_user_response",
+    "raw_data_copied": false
+  },
+  "experiments": [
+    {
+      "id": "data",
+      "state": "manifest_migrated_and_referenced_files_audited",
+      "remaining": [
+        "public packaging/download location",
+        "video/parquet content audit",
+        "resolve 4999 vs 5000 release description"
+      ]
+    },
+    {
+      "id": "codec",
+      "state": "implementation_and_training_entrypoint_migrated_cpu_verified",
+      "remaining": [
+        "full pretrained-Qwen/GPU training validation",
+        "checkpoint selection"
+      ],
+      "training_and_validation_video_keys": [
+        "observation.images.cam_high"
+      ]
+    },
+    {
+      "id": "dynamics",
+      "state": "training_and_checkpoint_tests_pass",
+      "remaining": [
+        "full training recipe to paper checkpoint mapping"
+      ]
+    },
+    {
+      "id": "rgb_decoder",
+      "state": "training_entrypoint_and_codec_equivalence_verified",
+      "remaining": [
+        "decoder checkpoint selection",
+        "end-to-end RGB validation"
+      ]
+    },
+    {
+      "id": "open_loop",
+      "state": "regressions_pass_macro_aggregation_added",
+      "remaining": [
+        "paper episode subset/reference protocol",
+        "checkpoint evaluation",
+        "baseline matching"
+      ]
+    },
+    {
+      "id": "long_horizon",
+      "state": "contiguous_chunk_metrics_added",
+      "remaining": [
+        "paper chunk/reset/episode protocol verification"
+      ]
+    },
+    {
+      "id": "efficiency",
+      "state": "TokenWorld_timing_regressions_pass",
+      "remaining": [
+        "baseline timing scope alignment",
+        "hardware and checkpoint benchmarks"
+      ]
+    },
+    {
+      "id": "closed_loop",
+      "state": "OFT_runner_migrated_cli_only",
+      "remaining": [
+        "PIv3 and GR00T RoboTwin input/action adapters",
+        "reference simulator initialization",
+        "manual success labels",
+        "all-head equivalence and closed-loop evaluation"
+      ]
+    },
+    {
+      "id": "baselines",
+      "state": "partial_source_candidates_archived_outside_release",
+      "remaining": [
+        "IRASim RGB entrypoint",
+        "Ctrl-World camera/checkpoint matching",
+        "WorldGym protocol correction",
+        "external runtime pins"
+      ]
+    },
+    {
+      "id": "representation_ablations",
+      "state": "S-VAE_dimensions_and_raw_Qwen_recipes_prepared",
+      "remaining": [
+        "exact Table II/III datasets and settings",
+        "matched-TokenWorld-backbone SDXL-VAE implementation/config",
+        "all ablation checkpoint mapping"
+      ]
+    }
+  ],
+  "public_release_ready": false,
+  "layout": "single tokenworld package"
+}

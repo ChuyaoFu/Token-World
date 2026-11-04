@@ -1,0 +1,405 @@
+{
+  "source_commit": "8ad7b5b5dee80e4e6383fee3c671ab8ff4ffeffb",
+  "includes_uncommitted_work": true,
+  "files": [
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/dreamer4.py",
+      "release_path": "tokenworld/dynamics/model.py",
+      "source_sha256": "437a4c6d1e3630301b9c0aef4c71b7b99f6a3abb73d517137894bd9547c85035",
+      "modified": true,
+      "release_sha256": "a5ea2f021e499d1c0a1bff377d8b4cccba323b51d1b03bc8181fae16701d8d60"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/vqgan.py",
+      "release_path": "tokenworld/decoder/model.py",
+      "source_sha256": "97086c5ce72fd05bf5c047ea24125b8a98d826d25b057315d651dad0367ee622",
+      "modified": false,
+      "release_sha256": "97086c5ce72fd05bf5c047ea24125b8a98d826d25b057315d651dad0367ee622"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/vqvae.py",
+      "release_path": "tokenworld/codec/vqvae.py",
+      "source_sha256": "ba80b222e54ce9500d8dc58fa8699f73ead36de9ec31a6b1f54dcfa45514e7da",
+      "modified": true,
+      "release_sha256": "83bc7de7385385808348d5c8eff55464cab7733ecbb5f31aadf32458d7731098"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/symmetric_qwen_codec.py",
+      "release_path": "tokenworld/codec/decoder.py",
+      "source_sha256": "bc811cb2abab90779dc6564ff19d63f0fb136f5a5dc9c451db2f84b36d64a9f7",
+      "modified": true,
+      "release_sha256": "ba467f636e4603a5b99cc3e865107260d3dbe6b4823dea9e71fd2f11945bd6e3"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/task_tokenizer.py",
+      "release_path": "tokenworld/dynamics/task_tokenizer.py",
+      "source_sha256": "e89bba61860fc67380201a5143324a3511d0aaf30b3bdb9dac98d24d22ff1389",
+      "modified": false,
+      "release_sha256": "e89bba61860fc67380201a5143324a3511d0aaf30b3bdb9dac98d24d22ff1389"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/train_decoder_robotwin.py",
+      "release_path": "tokenworld/decoder/train.py",
+      "source_sha256": "a7e762c638be593fb50f7584db00e73b4979d88b50772a13f5c94b5c058482e0",
+      "modified": true,
+      "release_sha256": "66e49deaed9bd09d379d2d73fcef01884311870f32e6e2e4eb6825b3f5366e15"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer_datasets/robotwin_svae_dset.py",
+      "release_path": "tokenworld/data/dataset.py",
+      "source_sha256": "ce01fa975633b2311a7a793aab000904749d89820f0df7b8821876c24edc9a61",
+      "modified": false,
+      "release_sha256": "ce01fa975633b2311a7a793aab000904749d89820f0df7b8821876c24edc9a61"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "distributed_fn/__init__.py",
+      "release_path": "tokenworld/utils/distributed/__init__.py",
+      "source_sha256": "2f4541598b2a2fb41681db38bd8230f8a7fbcc9ea16e7abb97fe7c9bacad30d1",
+      "modified": false,
+      "release_sha256": "2f4541598b2a2fb41681db38bd8230f8a7fbcc9ea16e7abb97fe7c9bacad30d1"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "distributed_fn/distributed.py",
+      "release_path": "tokenworld/utils/distributed/distributed.py",
+      "source_sha256": "bc3263fb5ce314ce484d13e8fb2094da6f640f11d79617c8dd9d73a7ed8341be",
+      "modified": false,
+      "release_sha256": "bc3263fb5ce314ce484d13e8fb2094da6f640f11d79617c8dd9d73a7ed8341be"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "distributed_fn/launch.py",
+      "release_path": "tokenworld/utils/distributed/launch.py",
+      "source_sha256": "79bb9d45c50f1b5d57bde66b6f8ad9744fb4cf5eaee62ee4a972716c5ffc7a6d",
+      "modified": true,
+      "release_sha256": "9a7ddbf277e0dea6c69ef4cc5e4f436cfe82727dfa15186c15837fdb78135f6c"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "eval/world_model_rollout.py",
+      "release_path": "tokenworld/evaluation/rollout.py",
+      "source_sha256": "ae29b0f94023ef96cbed2f7a4655021e3664cb92cfd71452ba31fb1598ada3eb",
+      "modified": true,
+      "release_sha256": "6308de41cb7c04e8ef71f9c494b5c9c6a55a0094f449a4a2a8024b250ac72821"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "eval/utils/checkpoint_utils.py",
+      "release_path": "tokenworld/utils/checkpoint.py",
+      "source_sha256": "031b0e580a3f64d351eeea6ee17d5612f047494a3576e021bc461adc8805f007",
+      "modified": true,
+      "release_sha256": "cab45318ec21f2058bc2aff8bbe9047f30525a6d2f7ac480e35e9a7183f967c3"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "metrics/image_metrics.py",
+      "release_path": "tokenworld/decoder/metrics/image.py",
+      "source_sha256": "abcf5536b7d501146d571b1c7011b407ad5444ebd99c09f9db85db5d82116090",
+      "modified": true,
+      "release_sha256": "1ee24941fd4359742f371f775061a361cac58f113f3eb7897f86be449eab4931"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "metrics/lpipsPyTorch/__init__.py",
+      "release_path": "tokenworld/decoder/metrics/lpips/__init__.py",
+      "source_sha256": "a657ce7355782eb970f95fd0d2e26eec5b9023212d2b655814da6e15b70510b4",
+      "modified": false,
+      "release_sha256": "a657ce7355782eb970f95fd0d2e26eec5b9023212d2b655814da6e15b70510b4"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "metrics/lpipsPyTorch/modules/lpips.py",
+      "release_path": "tokenworld/decoder/metrics/lpips/modules/lpips.py",
+      "source_sha256": "fd7f23fdb77a5212626f8d123d71961bc59feafe85a1db86d49ab32ac6cf8743",
+      "modified": false,
+      "release_sha256": "fd7f23fdb77a5212626f8d123d71961bc59feafe85a1db86d49ab32ac6cf8743"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "metrics/lpipsPyTorch/modules/networks.py",
+      "release_path": "tokenworld/decoder/metrics/lpips/modules/networks.py",
+      "source_sha256": "dfa6f152b0e3fbc23ac3bfaea52b46e9473e64ad539ea22ab030c57af51c7f14",
+      "modified": false,
+      "release_sha256": "dfa6f152b0e3fbc23ac3bfaea52b46e9473e64ad539ea22ab030c57af51c7f14"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "metrics/lpipsPyTorch/modules/utils.py",
+      "release_path": "tokenworld/decoder/metrics/lpips/modules/utils.py",
+      "source_sha256": "1bd4a7d4e7b43215497675ed852936fe4f27e7ea3068afe0b0e1f7cfb6c48570",
+      "modified": false,
+      "release_sha256": "1bd4a7d4e7b43215497675ed852936fe4f27e7ea3068afe0b0e1f7cfb6c48570"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "tests/test_robotwin_svae_dset.py",
+      "release_path": "tests/test_robotwin_svae_dset.py",
+      "source_sha256": "d207f088e7f8f7b9803533d3a499f0e5de332fbc30aebb2422b5ee5573a67fc1",
+      "modified": true,
+      "release_sha256": "fd03892c57de5f7458e46b86c9046f17364bd23288508a76f36467e0e7304fbb"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "tests/test_spatial_token_geometry.py",
+      "release_path": "tests/test_spatial_token_geometry.py",
+      "source_sha256": "bd7c4d0715b30134dc73bd1f36d43d2814e302719591dccef54e8ae1f654dd53",
+      "modified": true,
+      "release_sha256": "1ca0fd9d3045df73a39593bd8b54001ff3ac71a9b705662bb83e88bb983cc2a3"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "tests/test_step_checkpointing.py",
+      "release_path": "tests/test_step_checkpointing.py",
+      "source_sha256": "661aa39c14392643f8db4435521b391aad166d79a10667f72a5cef90f3e9a08e",
+      "modified": true,
+      "release_sha256": "8e5e7f6d021286ae71fc95b65431d026b7f6c10545bf09e67cfd57154777ea2f"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "tests/check_open_loop_fidelity_regressions.py",
+      "release_path": "tests/check_open_loop_fidelity_regressions.py",
+      "source_sha256": "64e855b1658327a4f4e437d9be58cafbaf85fea9a628928acb30d36f4ac0a7f6",
+      "modified": true,
+      "release_sha256": "846fe5816cfe5bc75a29c7083e8d76e551e5c75ffc62a776111bf0866ce6d321"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "LICENSE",
+      "release_path": "LICENSE",
+      "source_sha256": "d720a203d6f99e1b254dabf13e3b1000efb0a4e9f0251f7e97c2d3562ec626e9",
+      "modified": false,
+      "release_sha256": "d720a203d6f99e1b254dabf13e3b1000efb0a4e9f0251f7e97c2d3562ec626e9"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "LICENSE",
+      "release_path": "licenses/IRASim-Apache-2.0.txt",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "modified": false,
+      "release_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "starVLA/LICENSE",
+      "release_path": "licenses/StarVLA-MIT.txt",
+      "source_sha256": "6ca01970c4e66d2d5bebd0a00b55de5b4081017e0f0c97ddb415cda28e3e8ffa",
+      "modified": false,
+      "release_sha256": "6ca01970c4e66d2d5bebd0a00b55de5b4081017e0f0c97ddb415cda28e3e8ffa"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/trainers.py",
+      "release_path": "tokenworld/dynamics/trainer.py",
+      "source_sha256": "3ef2808b6e56db58c5eb8d82e7d3c7a125eae8f5d23b0ebdf460cce8157f2ba0",
+      "modified": true,
+      "release_sha256": "563a3296a67f68daf96441debc9f7b62c38eb3503a9483cca91f47eb4d9229d0"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "dreamer4/train_dreamer_vlm.py",
+      "release_path": "tokenworld/dynamics/train.py",
+      "source_sha256": "d9c7dc43d64581b04931a714671dff38eb4d9947b026aa719f9975ebf9ba2512",
+      "modified": true,
+      "release_sha256": "9fbbc6246c433550b174f45e8ad879ceafc2a6622611dc86f6862a6630b311fc"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "eval/generate_from_ckpt.py",
+      "release_path": "tokenworld/decoder/checkpoint.py",
+      "source_sha256": "aff027183d717e8840b01a9272db6f05c58d7a14d4f192b38e839cea72d0b2e6",
+      "modified": true,
+      "release_sha256": "11a8cf83eaf186246d2591e93907fdfb26d330a6cb76b512dce60534d012cc55"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "starVLA/model/modules/shared_vision_token_codec.py",
+      "release_path": "tokenworld/codec/shared_vision_token_codec.py",
+      "source_sha256": "60de724b4bceec38e14448bb2e79ca622a0ddaac9ba54d24fb5c04f9257d6863",
+      "modified": false,
+      "release_sha256": "60de724b4bceec38e14448bb2e79ca622a0ddaac9ba54d24fb5c04f9257d6863"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "examples/simBenchmarks/Robotwin/codec_fidelity/common.py",
+      "release_path": "tokenworld/codec/common.py",
+      "source_sha256": "c714acd9817e0957adc9fc44fab1a2fd603badd775daccea1c394f0a3c50d1ae",
+      "modified": true,
+      "release_sha256": "93745260f6cb48a997c44b777f218a2587b3adecbfc8fc670be545decd86bd24"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "examples/simBenchmarks/Robotwin/codec_fidelity/train_codec_fidelity.py",
+      "release_path": "tokenworld/codec/fidelity.py",
+      "source_sha256": "73f6fdf4aa948dad682f47e8748480a54dd30ecd0000b16345f8e9f589eed969",
+      "modified": true,
+      "release_sha256": "5be3aa55272c0e0c43d1051f11766614c89639583a47b1e7b1f08f8c72c88280"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "examples/simBenchmarks/Robotwin/codec_fidelity/extract_qwen_teacher_cache.py",
+      "release_path": "tokenworld/data/video.py",
+      "source_sha256": "79d4849c5b6862276b770cf74aca7b9e153e381b58e42a97c39815020e928ca7",
+      "modified": true,
+      "release_sha256": "6ff7e5819cc268eaed05c3675187840528276239ec66dd3b64c91640104a7e11"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "examples/simBenchmarks/Robotwin/latent_dynamics/export_latent_sequence_cache.py",
+      "release_path": "tokenworld/data/cache_utils.py",
+      "source_sha256": "47be67bfc7305783b8fb49208ed01780342db1a38b504b13e02c3d3918150374",
+      "modified": true,
+      "release_sha256": "57a5e8261558cea11e3f6af4dfa8b09f355063da85fcc2eed210119d31695e9e"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "examples/simBenchmarks/Robotwin/latent_dynamics/latent_dynamics_common.py",
+      "release_path": "tokenworld/utils/io.py",
+      "source_sha256": "c684034677904eb62ff4ff1c2be21f088bdf5ae990f6ef42719a55371835f0b5",
+      "modified": true,
+      "release_sha256": "2384b2642c79e262cdaa6235f0c6ce436d7167eeb7652a74a95e54be815d4297"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "examples/simBenchmarks/Robotwin/codec_fidelity/train_streaming_symmetric_qwen_svae.py",
+      "release_path": "tokenworld/codec/train.py",
+      "source_sha256": "c990bb2cddf5cabb8acd2908daadc6e7971d19a3756a12901ce57968b7eeb939",
+      "modified": true,
+      "release_sha256": "0e0ba0624e36dad00f22eebd10173e5787c104930673e573f503cb240ddfefec"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "examples/simBenchmarks/Robotwin/latent_dynamics/export_e2_sequence_cache.py",
+      "release_path": "tokenworld/data/export_svae.py",
+      "source_sha256": "60aceee43d78a6a47d75bb04f8d88c6b90efa4b1e6a22d8234b2cefc72bfbda9",
+      "modified": true,
+      "release_sha256": "9a32334028334306f7ed915b58a449a5fc2c5dad57e3c8455555f6c5517015d9"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "scripts/export_robotwin_raw_vlm.py",
+      "release_path": "tokenworld/data/export_raw.py",
+      "source_sha256": "3720ea0a0124d8d560783377eaa23d488c46d4b26551d8f334e37b6068fddf28",
+      "modified": true,
+      "release_sha256": "fa6fa0b824ad88f334b97136ba6ce189bc9aab047dba31d8d20376b703c91c56"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "evaluate/evaluate_tokenworld_qwenoft_closed_loop.py",
+      "release_path": "tokenworld/policies/qwenoft.py",
+      "source_sha256": "392e0548a1e6c62f770b5397a8c277bf63f40d58f554d743f89360495748c237",
+      "modified": true,
+      "release_sha256": "d9877b1fcacedd31afd092f78634e4f9e653b39d8c9e44f4ce4b9012448e3813"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "eval/evaluate_tokenworld_open_loop_fidelity.py",
+      "release_path": "tokenworld/evaluation/open_loop.py",
+      "source_sha256": "93c8d23a9f5501830c2ae2a364d9aa3cebb553b485bcdda1bd367a2274d599c7",
+      "modified": true,
+      "release_sha256": "f1e68067b298a3d3604e8ba942d38d2ef753fe2e520ebf27b2c50b2b75bc37a1"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "scripts/measure_muka_sec_lds.py",
+      "release_path": "tokenworld/evaluation/representation.py",
+      "source_sha256": "8cce2f5524e137c62fe6ac2fe9c0be4e3ed160d3eb8e085a0e838ba7b3c187a0",
+      "modified": true,
+      "release_sha256": "4ed26b77882ef867212771526bb053dfc835a0222d22d6e88edf41820eea774b"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "tools/robotwin_replay_artifacts/replay_tokenworld_svae_closed_loop.py",
+      "release_path": "tokenworld/evaluation/closed_loop.py",
+      "source_sha256": "43a2541e8d6c8280e7cd269f6e494256e929ab52785855b4fe402b83043bc2c6",
+      "modified": true,
+      "release_sha256": "35494b44bf88e259cd5f444183014511bab79b2ff45e736dc15371b89b928ac9"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "tools/robotwin_replay_artifacts/prepare_closed_loop_manifest.py",
+      "release_path": "tokenworld/evaluation/prepare_manifest.py",
+      "source_sha256": "22744828ae4498caa268111afe14fc17cae49bfa24361d818917d51ac89f2935",
+      "modified": false,
+      "release_sha256": "22744828ae4498caa268111afe14fc17cae49bfa24361d818917d51ac89f2935"
+    },
+    {
+      "source_repository": "TokenWorld",
+      "source_path": "tools/robotwin_replay_artifacts/make_manifest.py",
+      "release_path": "tokenworld/data/select_replay.py",
+      "source_sha256": "78a523e316282d4a8475d3ff2614ab0267735fc9208fd485994e731534d34a37",
+      "modified": true,
+      "release_sha256": "5b7375584a4ef0d7304026696d63574d3262100c353439d0bc6aaacfa4f1eab0"
+    },
+    {
+      "source_repository": "IRASim",
+      "source_path": "assets/manifests/robotwin/tokenworld_episode_split_all50_seed3047.json",
+      "release_path": "configs/robotwin/splits/seed3047.json",
+      "source_sha256": "c5bd39957b5cdcd9231ea725c3fe0495a586217022a98daa73b2ad2f16b5a0f8",
+      "modified": true,
+      "release_sha256": "dffe666a4ae9d01cb56baea2dd2805d8fdd643ac4c3f3c446f81a0c88238aaed"
+    }
+  ],
+  "generated_or_derived_files": [
+    ".gitignore",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "configs/environment/accelerate.yaml",
+    "configs/environment/ppu.txt",
+    "configs/robotwin/decoder/rgb.yaml",
+    "configs/robotwin/dynamics/raw_qwen.yaml",
+    "configs/robotwin/dynamics/svae_d16.yaml",
+    "configs/robotwin/dynamics/svae_d32.yaml",
+    "configs/robotwin/dynamics/svae_d48.yaml",
+    "configs/robotwin/dynamics/svae_d8.yaml",
+    "docs/ablations.md",
+    "docs/data.md",
+    "docs/evaluation.md",
+    "docs/integrations.md",
+    "docs/layout.md",
+    "docs/reproducibility/README.md",
+    "docs/reproducibility/data_audit.json",
+    "docs/reproducibility/environment_validation.json",
+    "docs/reproducibility/package_audit.json",
+    "docs/reproducibility/status.json",
+    "docs/reproducibility/training_defaults.json",
+    "docs/reproducibility/validation.json",
+    "docs/reproducibility/world_model_preflight.json",
+    "docs/training.md",
+    "pyproject.toml",
+    "scripts/README.md",
+    "scripts/_environment.sh",
+    "scripts/check_world_model_cache.py",
+    "scripts/reproduce_world_model.sh",
+    "scripts/run_python.sh",
+    "scripts/setup_env.sh",
+    "scripts/train_svae.sh",
+    "scripts/train_world_model.sh",
+    "tests/test_checkpoint_compatibility.py",
+    "tests/test_codec_portability.py",
+    "tests/test_release_contracts.py",
+    "tests/test_reproduction_workflow.py",
+    "tests/test_svae_camera.py",
+    "tokenworld/__init__.py",
+    "tokenworld/codec/__init__.py",
+    "tokenworld/data/__init__.py",
+    "tokenworld/data/audit.py",
+    "tokenworld/decoder/__init__.py",
+    "tokenworld/decoder/metrics/__init__.py",
+    "tokenworld/dynamics/__init__.py",
+    "tokenworld/evaluation/__init__.py",
+    "tokenworld/evaluation/aggregate.py",
+    "tokenworld/policies/__init__.py",
+    "tokenworld/utils/__init__.py",
+    "tokenworld/utils/checkpoint_compat.py",
+    "tokenworld/utils/config.py"
+  ],
+  "layout": "single tokenworld package; scripts provide training launchers"
+}

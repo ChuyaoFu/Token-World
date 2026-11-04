@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-04",
+  "status": "validated_for_publication",
+  "tests": {
+    "passed": 45,
+    "failed": 0,
+    "host": "ali-dev",
+    "python": "release venv Python 3.12"
+  },
+  "checkpoints": {
+    "files": 4,
+    "bytes": 4638451780,
+    "original_sha256_verified": true
+  },
+  "training_dry_runs": {
+    "svae": "passed on ali-dev",
+    "world_model": "passed",
+    "adapter": "passed",
+    "rgb_decoder": "passed on ali-dev"
+  },
+  "known_external_requirements": [
+    "PPU SDK",
+    "Qwen3-VL-4B-Instruct",
+    "RoboTwin QwenOFT policy bundle and pinned StarVLA",
+    "RoboTwin data or exported latent cache",
+    "separate RoboTwin/SAPIEN simulator runtime for simulator evaluation"
+  ]
+}
