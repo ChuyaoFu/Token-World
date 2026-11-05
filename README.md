@@ -235,3 +235,5 @@ If you use Token-World in your research, please cite:
 ## Acknowledgement
 
 We thank the [starVLA](https://github.com/starVLA/starVLA) team for releasing the QwenOFT policy implementation we use to evaluate Token-World on RoboTwin.
+
+We also thank the [RoboTwin](https://github.com/robotwin-Platform/robotwin) team for providing the simulator and manipulation tasks used in our closed-loop evaluations.
