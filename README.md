@@ -218,3 +218,20 @@ Historical records describe the experiments at the time they were written. The r
 ## Licenses
 
 Code retains the original MIT and per-file third-party notices. See [LICENSE](LICENSE), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/`. Model and dataset cards document the respective artifacts and upstream dependencies.
+
+## Citation
+
+If you use Token-World in your research, please cite:
+
+```bibtex
+@article{fu2026token,
+  title={Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation},
+  author={Fu, Chuyao and Chi, Xiaowei and Rui, Yuhan and Wang, Yu-kai and Qian, Zezhong and Zhang, Xiaojie and Lou, Yunfan and Zhang, Kevin and Ge, Kuangzhi and Mak, Chak Wing and others},
+  journal={arXiv preprint arXiv:2610.00575},
+  year={2026}
+}
+```
+
+## Acknowledgement
+
+We thank the [starVLA](https://github.com/starVLA/starVLA) team for releasing the QwenOFT policy implementation we use to evaluate Token-World on RoboTwin.
