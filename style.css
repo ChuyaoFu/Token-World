@@ -153,33 +153,33 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 14px;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-width: 138px;
-  min-height: 54px;
-  padding: 12px 24px;
-  border: 1px solid #cfcfcf;
+  gap: 8px;
+  min-width: 112px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1px solid #111;
   border-radius: 8px;
-  background: #fafafa;
-  color: var(--text);
+  background: #111;
+  color: #fff;
   font-family: inherit;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
   text-decoration: none;
 }
 
-.text-link:not(:disabled):hover { color: var(--accent); border-color: var(--accent); }
+.text-link:not(:disabled):hover { background: #333; border-color: #333; }
 
 .link-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
@@ -548,9 +548,9 @@ code {
   .corresponding-author { font-size: 0.875rem; }
   .institution-logos { gap: 12px 20px; }
   .institution-logo { width: 140px; height: 54px; }
-  .header-links { width: calc(100% - 32px); max-width: 380px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .text-link { min-width: 0; min-height: 48px; padding: 10px 8px; gap: 6px; font-size: 1rem; }
-  .link-icon { width: 20px; height: 20px; }
+  .header-links { width: calc(100% - 32px); max-width: 330px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .text-link { min-width: 0; min-height: 44px; padding: 8px; gap: 6px; font-size: 0.9375rem; }
+  .link-icon { width: 18px; height: 18px; }
   .section { margin-top: 56px; }
   .teaser-section { margin-top: 0; }
   .abstract-text, .method-section .figure-caption { font-size: 1rem; text-align: left; }
