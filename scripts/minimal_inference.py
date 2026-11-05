@@ -34,7 +34,9 @@ def main():
     args = parser.parse_args()
     if not torch.cuda.is_available():
         parser.error('This validated recipe requires a PPU SDK device; use scripts/run_python.sh.')
-    torch.set_num_threads(4)
+    # The PPU SDK CPU math path can crash in RoPE initialization with multiple
+    # host threads. This small single-device demo does not need CPU parallelism.
+    torch.set_num_threads(1)
     torch.cuda.set_device(args.device)
     start = time.monotonic()
     metadata = json.loads(args.sample.with_suffix('.json').read_text())

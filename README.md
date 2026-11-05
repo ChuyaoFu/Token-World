@@ -68,6 +68,8 @@ After installation and checkpoint download, run:
 bash scripts/run_python.sh scripts/minimal_inference.py
 ```
 
+The demo uses one CPU compute thread to avoid a PPU SDK multithreaded CPU RoPE initialization crash observed during a fresh-install audit. Device inference still runs on one PPU.
+
 This uses the small [bundled RoboTwin example](examples/robotwin/README.md), with no dataset download, policy bundle, Qwen download, simulator, or shared storage required. It starts from one cached `cam_high` latent and the initial robot state, replays 30 recorded actions in two 15-frame segments, carries the GRU state across the boundary, and resets cross-segment KV. All four released models are loaded: WM predicts latents, S-VAE reconstructs merger features, the adapter predicts three DeepStack layers, and the RGB decoder produces images.
 
 Outputs are `outputs/minimal_inference/prediction.gif`, `comparison.png` (recorded RGB versus WM decoded RGB at frames 15 and 30), `predictions.npz`, and `report.json`. This is a runnable inference smoke test, **not policy action inference, a closed-loop success test, or a paper metric evaluation**. It does not run the VLM encoder from RGB; the initial latent is included. The sample's original codec/cache provenance is documented alongside it.
