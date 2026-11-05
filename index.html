@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation" />
     <title>Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation</title>
-    <link rel="stylesheet" href="style.css?v=reference-content-width" />
+    <link rel="stylesheet" href="style.css?v=closed-loop-replay" />
   </head>
   <body>
     <main class="site-shell">
@@ -103,7 +103,48 @@
         <div class="section-heading">
           <h2 id="qualitative-title">Qualitative Results</h2>
         </div>
-        <div id="qualitative-video-results" class="experiment-list"></div>
+        <section class="qualitative-block" aria-labelledby="open-loop-title">
+          <h3 class="replay-heading" id="open-loop-title">Open-loop Replay</h3>
+          <div id="qualitative-video-results" class="experiment-list"></div>
+        </section>
+        <section class="qualitative-block" id="closed-loop" aria-labelledby="closed-loop-title">
+          <h3 class="replay-heading" id="closed-loop-title">Closed-loop Rollouts and Simulation Replay</h3>
+          <p class="replay-description">Left: the VLA policy selects actions in closed loop using states predicted by Token-World. Right: the simulator replays the same action sequence.</p>
+          <div class="experiment-list">
+            <figure class="replay-demo">
+              <figcaption id="replay-place-burger-fries">Place burger and fries</figcaption>
+              <video src="videos/closed-loop/place-burger-fries.mp4" aria-labelledby="replay-place-burger-fries" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <figure class="replay-demo">
+              <figcaption id="replay-place-can-basket">Place a can in the basket</figcaption>
+              <video src="videos/closed-loop/place-can-basket.mp4" aria-labelledby="replay-place-can-basket" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <figure class="replay-demo">
+              <figcaption id="replay-place-cans-plasticbox">Place cans in the plastic box</figcaption>
+              <video src="videos/closed-loop/place-cans-plasticbox.mp4" aria-labelledby="replay-place-cans-plasticbox" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <figure class="replay-demo">
+              <figcaption id="replay-place-container-plate">Place the container on the plate</figcaption>
+              <video src="videos/closed-loop/place-container-plate.mp4" aria-labelledby="replay-place-container-plate" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <figure class="replay-demo">
+              <figcaption id="replay-place-empty-cup">Place the empty cup</figcaption>
+              <video src="videos/closed-loop/place-empty-cup.mp4" aria-labelledby="replay-place-empty-cup" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <figure class="replay-demo">
+              <figcaption id="replay-put-object-cabinet">Put the object in the cabinet</figcaption>
+              <video src="videos/closed-loop/put-object-cabinet.mp4" aria-labelledby="replay-put-object-cabinet" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <figure class="replay-demo">
+              <figcaption id="replay-stack-blocks-two">Stack two blocks</figcaption>
+              <video src="videos/closed-loop/stack-blocks-two.mp4" aria-labelledby="replay-stack-blocks-two" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+            <figure class="replay-demo">
+              <figcaption id="replay-stack-bowls-two">Stack two bowls</figcaption>
+              <video src="videos/closed-loop/stack-bowls-two.mp4" aria-labelledby="replay-stack-bowls-two" controls autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+          </div>
+        </section>
       </section>
 
       <section class="section" aria-labelledby="quantitative-title">
@@ -136,6 +177,6 @@
       </section>
     </main>
 
-    <script src="script.js?v=autoplay-loop" defer></script>
+    <script src="script.js?v=closed-loop-replay" defer></script>
   </body>
 </html>

@@ -245,6 +245,20 @@ h2 {
   margin-top: 72px;
 }
 
+.replay-heading {
+  margin: 0 0 22px;
+  font: 500 clamp(1.25rem, 2vw, 1.55rem)/1.25 Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+.replay-description {
+  max-width: 66ch;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.replay-demo { margin: 0; min-width: 0; }
+.replay-demo figcaption { margin-bottom: 8px; font-weight: 600; }
+.replay-demo video { display: block; width: 100%; height: auto; aspect-ratio: 448 / 268; background: #111; }
+
 .subsection-title {
   margin: 0 0 24px;
   color: var(--muted);

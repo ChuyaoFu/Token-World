@@ -299,6 +299,26 @@ async function startAllComparisons() {
   videoComparisons.forEach((comparison) => comparison.autoplay());
 }
 
+function startClosedLoopReplays() {
+  document.querySelectorAll(".replay-demo video").forEach((video) => {
+    const showUnavailable = () => {
+      const link = document.createElement("a");
+      link.href = video.src;
+      link.textContent = "Open video file";
+      const message = document.createElement("p");
+      message.append("Video unavailable. ", link);
+      video.replaceWith(message);
+    };
+    if (video.error) return showUnavailable();
+    video.addEventListener("error", showUnavailable, { once: true });
+    // Request playback for every replay, including players below the viewport.
+    // The native controls remain available if the browser blocks autoplay.
+    video.muted = true;
+    video.play().catch(() => {});
+  });
+}
+
 setupFigureFallbacks();
 renderExperiments("qualitative-video-results", qualitativeVideoExperiments, setupVideoComparison);
 startAllComparisons();
+startClosedLoopReplays();
