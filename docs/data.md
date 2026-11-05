@@ -70,6 +70,27 @@ uncompressed Qwen features (omit `--codec-checkpoint`). Multi-process export
 uses `python -m torch.distributed.run ... -m tokenworld.data.export_svae`.
 No export is launched as part of release preparation.
 
-The public download location, data license text and archive checksums remain
-to be finalized. The existing dataset card only declares Apache License 2.0;
-the code license must not be substituted for a dataset license decision.
+## Download the existing dataset
+
+The complete export is already uploaded to [ModelScope: Zellovo/robotwin-success-fail-lerobot](https://modelscope.cn/datasets/Zellovo/robotwin-success-fail-lerobot), whose dataset card declares Apache License 2.0. It is separate from the Token-World model repositories; it does not need to be duplicated inside a model repository.
+
+The release audit found 4,999 episode Parquet files and 14,997 camera videos. All 20,009 remote file paths and sizes match the local source export; SHA-256 also matches for 16 selected files covering metadata and a sample episode. This is a metadata/sample verification, not a claim that every video was decoded. ModelScope's API currently reports gated/login-required access: anonymous listing returned 403, while the owner's authenticated access succeeded. Other users must sign in and meet the repository's access conditions.
+
+```bash
+bash scripts/run_python.sh -m pip install 'modelscope-hub==0.4.3'
+# Interactive token prompt; do not put a token in a command or repository file.
+./venv/bin/modelscope-hub login
+bash scripts/run_python.sh - <<'PYCODE'
+from modelscope_hub.api import HubApi
+HubApi().download_repo(
+    'Zellovo/robotwin-success-fail-lerobot', 'dataset', revision='master',
+    local_dir='datasets/robotwin-success-fail-lerobot', max_workers=8,
+)
+PYCODE
+export RAW_DATA_ROOT="$PWD/datasets/robotwin-success-fail-lerobot"
+bash scripts/run_python.sh -m tokenworld.data.audit \
+  --manifest configs/robotwin/splits/seed3047.json \
+  --data-root "$RAW_DATA_ROOT" --output outputs/dataset_audit.json
+```
+
+Generate the latent cache and `train_stats.pt` with `scripts/reproduce_world_model.sh --stage export` as shown in the root README. Statistics are derived from the fixed training split, not from validation data. Neither caches nor baseline checkpoints need to be uploaded for this release.

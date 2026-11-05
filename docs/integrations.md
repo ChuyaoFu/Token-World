@@ -1,18 +1,18 @@
 # External integrations and asset availability
 
-The current public model repositories contain four Token-World checkpoints and the World Model configuration. The self-contained [minimal inference example](../examples/robotwin/README.md) requires only those files and this repository.
+The public model repositories contain four Token-World checkpoints, the World Model configuration, and an optional QwenOFT policy bundle. The self-contained [minimal inference example](../examples/robotwin/README.md) requires only those files and this repository.
 
-The following assets remain external and are **not distributed by the current checkpoint download script**:
+Asset acquisition for each workflow:
 
 | Workflow | Additional required assets |
 | --- | --- |
-| Train S-VAE / export latents | Qwen3-VL-4B-Instruct and the exact RoboTwin LeRobot export with episode IDs matching our split |
-| Train / evaluate World Model | The exported S-VAE episode cache, cache specification, and training normalization statistics |
-| Policy action metrics / closed loop | QwenOFT policy bundle with its code, 50k weights, configuration and action statistics; frozen Qwen weights |
+| Train S-VAE / export latents | Qwen3-VL-4B-Instruct from upstream; the existing [RoboTwin LeRobot dataset](https://modelscope.cn/datasets/Zellovo/robotwin-success-fail-lerobot) with authenticated access |
+| Train / evaluate World Model | Generate the S-VAE cache and training statistics locally using `scripts/reproduce_world_model.sh --stage export` |
+| Policy action metrics / closed loop | `scripts/download_policy.py` downloads the 50k policy, code/config/statistics; Qwen weights come from upstream |
 | Simulator success evaluation | RoboTwin source/assets and a compatible separate SAPIEN/Mesa Python runtime (`ROBOTWIN_SIM_RUNTIME`) |
-| RGB baseline comparison | Ctrl-World source, weights and separate Python environment (`CTRL_PYTHON`); metric backbones |
+| Optional RGB baseline comparison | Obtain baseline source/weights separately; baseline checkpoints are outside this release scope |
 
-These workflows were validated in the research environment. Full public reproduction remains incomplete until the exact additional artifacts and acquisition instructions are released. Setting a path variable does not download or create the asset.
+Caches are derived artifacts, and baselines are optional comparison dependencies. Neither is a missing model upload. The simulator Python/Mesa environment remains a separate installation task; the existing simulator scripts require an explicitly configured runtime.
 
 The QwenOFT helper expects this bundle layout:
 
@@ -24,4 +24,4 @@ bundle/
   model/dataset_statistics.json
 ```
 
-The observed StarVLA source provenance is commit `6de4eeb06eca82a1d851e8a7ae6fb0c5817ec792`. Other policy heads and baseline integrations are research utilities, not additional ready-to-download public checkpoints. Keep external runtimes separate to avoid package and dependency conflicts.
+The observed StarVLA source provenance is commit `6de4eeb06eca82a1d851e8a7ae6fb0c5817ec792`. The public archive includes the validated compatibility patches and preserves the source licenses. Other policy heads and baseline integrations are research utilities outside this checkpoint release. Keep external runtimes separate to avoid package and dependency conflicts.

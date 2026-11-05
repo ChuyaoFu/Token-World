@@ -1,6 +1,7 @@
 # Adapted for the TokenWorld RoboTwin release: local imports and portable entrypoints.
 # Source attribution and original licenses are listed in THIRD_PARTY_NOTICES.md.
 from __future__ import annotations
+import os
 import sys
 from pathlib import Path
 import torch
@@ -47,6 +48,8 @@ def _load_policy(bundle: Path, device: torch.device):
             raise FileNotFoundError(f"No policy checkpoint under {bundle / 'model' / 'checkpoints'}")
         checkpoint_path = candidates[-1]
     config = apply_config_compat(OmegaConf.load(config_path))
+    if os.environ.get("QWEN_MODEL"):
+        config.framework.qwenvl.base_vlm = os.environ["QWEN_MODEL"]
     policy = build_framework(config)
     incompatible = policy.load_state_dict(_load_state_dict(checkpoint_path), strict=False)
     missing = [key for key in incompatible.missing_keys if "num_batches_tracked" not in key]

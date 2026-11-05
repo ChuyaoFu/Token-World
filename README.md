@@ -76,7 +76,9 @@ Outputs are `outputs/minimal_inference/prediction.gif`, `comparison.png` (record
 
 ## Assets needed for full reproduction
 
-**The full LeRobot data export, latent cache/train statistics, QwenOFT policy bundle, simulator Python/Mesa runtime and baseline checkpoints are not included in the current model repositories.** The full training/evaluation commands below require these additional assets; they cannot currently be reproduced from only the four published model weights. Generic upstream RoboTwin data does not establish the exact episode mapping and split of this export.
+The exact LeRobot export is already hosted at [Zellovo/robotwin-success-fail-lerobot](https://modelscope.cn/datasets/Zellovo/robotwin-success-fail-lerobot). It contains 4,999 episode Parquet files and 14,997 camera videos. ModelScope currently requires authenticated access to its files; see [data download and verification](docs/data.md#download-the-existing-dataset).
+
+Latent caches are **generated locally**, including `train_stats.pt`; they are not additional release downloads. Use the export-only command below. The QwenOFT policy bundle is an optional download from the same model mirrors as the Token-World weights. [Qwen3-VL-4B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct) and RoboTwin runtime/assets are installed from their upstream sources. Baseline checkpoints are outside this release scope and are not required to reproduce Token-World's own results.
 
 The RoboTwin export contains **4,999 trajectories across 50 tasks**, including 2,500 successes and 2,499 failures. The fixed split contains 4,499 training and 500 validation trajectories. Preserve the episode identifiers in `configs/robotwin/splits/seed3047.json`. Raw observations use three named camera streams and a 50 Hz time grid. See [the data contract](docs/data.md) for the expected LeRobot layout.
 
@@ -86,10 +88,36 @@ Set these paths to your downloaded assets before running training or evaluation.
 export QWEN_MODEL=/path/to/Qwen3-VL-4B-Instruct
 export RAW_DATA_ROOT=/path/to/robotwin-success-fail-lerobot
 export LATENT_CACHE="$PWD/outputs/cache/robotwin_svae_d16_3views_50hz"
-export POLICY_BUNDLE=/path/to/tokenworld_qwenoft_success_cam_high_teacher
+export POLICY_BUNDLE="$PWD/outputs/policies/robotwin_qwenoft"
 ```
 
 The policy bundle contains the pinned StarVLA implementation, configuration, normalization statistics and RoboTwin QwenOFT 50k weights. [Integration documentation](docs/integrations.md) describes its layout. Qwen, RoboTwin simulator assets and metric backbone weights have their own upstream distribution terms.
+
+### Download the QwenOFT policy (action metrics / closed loop)
+
+This optional bundle contains the original full step-50,000 policy checkpoint (about 9.1 GiB), source snapshots with licenses, configuration, and action normalization statistics. It is separate from the four-file WM demonstration download.
+
+```bash
+# Use either provider; ModelScope is shown here.
+bash scripts/run_python.sh -m pip install -c configs/environment/ppu.txt -e '.[policy]'
+bash scripts/run_python.sh -m pip install 'modelscope-hub==0.4.3'
+bash scripts/run_python.sh scripts/download_policy.py --provider modelscope
+# Alternatively: bash scripts/run_python.sh scripts/download_policy.py --provider huggingface
+export POLICY_BUNDLE="$PWD/outputs/policies/robotwin_qwenoft"
+```
+
+[The policy manifest](configs/policy.json) pins both the checkpoint and support archive by SHA-256. The downloader extracts and verifies the support files. Set `QWEN_MODEL` to your upstream Qwen3-VL-4B-Instruct directory; the StarVLA constructor still loads this base model before applying the full policy state dict.
+
+### Generate the latent cache and train statistics
+
+```bash
+bash scripts/reproduce_world_model.sh --stage export \
+  --model "$QWEN_MODEL" --data-root "$RAW_DATA_ROOT" \
+  --codec-checkpoint outputs/svae_d16_3views/best.pt \
+  --cache "$LATENT_CACHE" --gpus 8
+```
+
+This exports all three views, finalizes the episode index, computes training-only normalization statistics, and checks the cache. No cache upload is needed. Keep the codec/cache/normalization contract consistent for the World Model being trained or evaluated; regenerating with a different S-VAE is not byte-identical to its historical training cache.
 
 ## Reproduce training
 

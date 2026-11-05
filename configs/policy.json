@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "bundle_root": "outputs/policies/robotwin_qwenoft",
+  "files": [
+    {
+      "component": "policy",
+      "path": "outputs/policies/robotwin_qwenoft/model/checkpoints/steps_50000_pytorch_model.pt",
+      "bytes": 9785132794,
+      "sha256": "2d6d6d49fb3de03a4ab956f057066e4b5bcb3dfb7cb1184f5c5df274e545569a"
+    },
+    {
+      "component": "policy_support",
+      "path": "artifacts/robotwin_qwenoft_support.tar.gz",
+      "bytes": 10360639,
+      "sha256": "b742965d1b0b6fe97bd9a02b991c1602ab2b01e7ebe9a19a1cc19392ee4a8b57"
+    }
+  ],
+  "archive_members": 2118,
+  "policy_license": "Apache-2.0; source subdirectories retain their licenses"
+}

@@ -127,6 +127,8 @@ def load_policy(bundle: Path, device):
     if not checkpoints:
         raise FileNotFoundError(f"No policy checkpoint under {bundle / 'model' / 'checkpoints'}")
     config = apply_config_compat(OmegaConf.load(config_path))
+    if os.environ.get("QWEN_MODEL"):
+        config.framework.qwenvl.base_vlm = os.environ["QWEN_MODEL"]
     policy = build_framework(config)
     incompatible = policy.load_state_dict(_load_state_dict(checkpoints[-1]), strict=False)
     missing = [key for key in incompatible.missing_keys if "num_batches_tracked" not in key]
