@@ -8,7 +8,7 @@ out=${1:-outputs/robotwin_rgb_${selection}_current_25hz}
 reuse_from=${REUSE_FROM-$root/outputs/robotwin_rgb_compare_20261102/pilot_current}
 cards=${NUM_PPUS:-8}
 distribution=${DISTRIBUTION_METRICS:-1}
-ctrl_python=${CTRL_PYTHON:-/mnt/world_foundational_model/chuyao/venvs/tokenworld-ppu/bin/python}
+ctrl_python=${CTRL_PYTHON:-}
 [[ $cards =~ ^[1-8]$ ]] || { echo 'NUM_PPUS must be 1..8'; exit 2; }
 export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false TORCH_HOME="$root/outputs/pretrained/torch"
 prepare=(bash scripts/run_python.sh scripts/compare_rgb/prepare_panel.py --selection "$selection" --output "$out/panel.json")
@@ -20,6 +20,7 @@ summarize=(bash scripts/run_python.sh scripts/compare_rgb/summarize.py --panel "
 if [[ ${DRY_RUN:-0} == 1 ]]; then
  printf '%q ' "${prepare[@]}"; printf '\n'; if [[ -n "$reuse_from" && "$reuse_from" != "$out" && -f "$reuse_from/panel.json" ]]; then printf '%q ' "${reuse[@]}"; printf '\n'; fi; printf '%q ' "${token[@]}"; printf '\n'; printf 'PYTHON_BIN=%q ' "$ctrl_python"; printf '%q ' "${ctrl[@]}"; printf '\n'; printf '%q ' "${score[@]}"; printf '\n'; printf '%q ' "${summarize[@]}"; printf '\n'; if [[ $distribution == 1 ]]; then printf 'NUM_PPUS=%q bash scripts/compare_rgb/score_distribution.sh %q\n' "$cards" "$out"; fi; exit 0
 fi
+: "${CTRL_PYTHON:?Set CTRL_PYTHON to your separately installed Ctrl-World Python executable}"
 mkdir -p "$out"
 if [[ $distribution == 1 ]]; then bash scripts/run_python.sh scripts/compare_rgb/setup_distribution.py 2>&1 | tee "$out/distribution_setup.log"; fi
 "${prepare[@]}" 2>&1 | tee "$out/prepare.log"

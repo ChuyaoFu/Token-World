@@ -3,7 +3,7 @@
 Run on a single node after manually requesting eight PPU cards:
 
 ```bash
-cd /mnt/world_foundational_model/chuyao/TokenWorld-release
+cd /path/to/Token-World
 env -u ROBOTWIN_TASKS NUM_PPUS=8 PER_TASK=10 SEED_START=100000 MAX_STEPS=0 \
   bash scripts/closed_loop_video/run_8ppu.sh \
   outputs/robotwin_closed_loop_vs_sim_all50x10

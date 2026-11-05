@@ -363,7 +363,7 @@ Closed-loop diagnostics: `diagnose_closed_loop_policy.py` compares policy input 
 `train_deepstack_adapter.sh` runs the three-task, cam_high GT-latent pilot with the release venv. It freezes the existing S-VAE and policy, trains only a three-stream adapter, checks native RGB/injected-feature parity, and automatically evaluates held-out policy actions. World Model weights are not updated. This is an exploratory representation experiment, not a closed-loop benchmark or a default interface change.
 
 ```bash
-cd /mnt/world_foundational_model/chuyao/TokenWorld-release
+cd /path/to/Token-World
 bash scripts/train_deepstack_adapter.sh --output outputs/deepstack_adapter_pilot_20261031 --device cuda:0
 ```
 
@@ -375,9 +375,19 @@ Use a fresh output path for another run. See [experiment protocol](../docs/deeps
 Export all 50 tasks on eight PPUs, train the adapter on one PPU, evaluate it, then automatically remove this run's temporary feature files:
 
 ```bash
-bash -lc 'cd /mnt/world_foundational_model/chuyao/TokenWorld-release && bash scripts/reproduce_deepstack_adapter.sh --gpus 8 --output outputs/deepstack_adapter_all50_20261031'
+bash -lc 'cd /path/to/Token-World && bash scripts/reproduce_deepstack_adapter.sh --gpus 8 --output outputs/deepstack_adapter_all50_20261031'
 ```
 
 Submit once on **one eight-PPU node** with shared storage. The release-relative `venv` and PPU SDK are loaded automatically. Defaults: all 4,499 training episodes (8 sampled frames each), 500 held-out validation episodes (4 frames each), cam_high, batch 32, 30 epochs / 33,720 updates. Temporary feature storage is approximately 79.1 GiB. Failures preserve features for recovery; successful training plus final evaluation triggers narrowly scoped cleanup. Checkpoints, metrics, configuration and manifests remain. Re-submit identical arguments to continue an interrupted run.
 
 The small three-task adapter improved offline policy agreement but has **not** restored reliable learned-WM closed-loop behavior; full-data training must still be validated in closed loop. See [full protocol](../docs/deepstack_adapter_full.md) for recovery, cleanup, evaluation and current evidence.
+
+## Public minimal inference
+
+After following the root README installation and checkpoint download steps:
+
+```bash
+bash scripts/run_python.sh scripts/minimal_inference.py
+```
+
+The bundled example and all required model configuration are public. Full dataset, policy and simulator workflows still require the external assets listed in the root README.

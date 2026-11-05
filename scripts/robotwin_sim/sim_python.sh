@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
-base=${ROBOTWIN_SIM_RUNTIME:-/mnt/workspace/zgy/robotwin_closedloop_20261021}
-source /usr/local/PPU_SDK/envsetup.sh cuda >/dev/null
+base=${ROBOTWIN_SIM_RUNTIME:?Set ROBOTWIN_SIM_RUNTIME to your separately installed RoboTwin simulator runtime}
+source "${PPU_SDK_SETUP:-/usr/local/PPU_SDK/envsetup.sh}" cuda >/dev/null
 export LD_LIBRARY_PATH="$base/mesa-prefix/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}"
 export VK_ICD_FILENAMES="$base/mesa-prefix/usr/share/vulkan/icd.d/lvp_icd.json" VK_DRIVER_FILES="$base/mesa-prefix/usr/share/vulkan/icd.d/lvp_icd.json"
 if [[ -n "${TOKENWORLD_RENDER_LIB:-}" ]]; then

@@ -29,10 +29,10 @@ def main():
         if not path.is_file() and not args.verify_only:
             if args.provider == 'huggingface':
                 from huggingface_hub import hf_hub_download
-                hf_hub_download(args.repo_id, entry['path'], revision=args.revision, local_dir=args.root)
+                hf_hub_download(args.repo_id, entry['path'], revision=args.revision, local_dir=args.root, token=False)
             else:
                 from modelscope_hub.api import HubApi
-                HubApi().download_file(args.repo_id, 'model', entry['path'], revision=args.revision,
+                HubApi(token="").download_file(args.repo_id, 'model', entry['path'], revision=args.revision,
                                        local_dir=args.root, expected_sha256=entry['sha256'])
         if not path.is_file():
             raise FileNotFoundError(path)

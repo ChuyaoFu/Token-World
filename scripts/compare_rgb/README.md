@@ -1,6 +1,6 @@
 # RoboTwin: current Token-World / Ctrl-World RGB comparison
 
-Run from `/mnt/world_foundational_model/chuyao/TokenWorld-release` on PPU.
+Run from `/path/to/Token-World` on PPU.
 The user selected comparison at **shared native 25 Hz physical times**, without temporal interpolation. Token-World continues to generate at 50 Hz and only its matching even source frames are scored.
 
 ## Fixed inputs and outputs
@@ -10,7 +10,7 @@ The user selected comparison at **shared native 25 Hz physical times**, without 
 - All500 contains **108,677 Token-World prediction frames at50Hz and54,222 common prediction frames at25Hz**, excluding conditioning frame0. The separate balanced100 subset contains22,152 and11,058 frames respectively. Odd final source frames are retained in Token-World artifacts but have no native Ctrl prediction and are not interpolated.
 - Both initial observations refer to the same original cam_high frame 0. Model-specific frozen encoders retain their native preprocessing. Exact source-video SHA256 equality and destination-aligned recorded action/state equality are checked before generation.
 - Token-World: release checkpoint `outputs/world_model_svae_d16_cam_high_100k/checkpoint_step_0100000.pt`, 16 denoising steps, 15 destination frames per segment, intra-segment KV and **cross-segment GRU only**. Only the final predicted latent and predicted proprio feed the next segment. S-VAE `outputs/svae_d16_3views/best.pt`; RGB decoder **original epoch500**, `outputs/rgb_decoder_svae_d16_cam_high/decoder_epoch_0500.pt`.
-- Ctrl-World: `/mnt/world_foundational_model/chuyao/VA-CLIP/experiments/ctrlworld_robotwin_success_fail_cam_high/checkpoints/checkpoint-100000.pt`, single cam_high, 50 diffusion steps, native 25 Hz, 5 generated frames per call with 4-frame advance, native history indices `[0,0,-12,-9,-6,-3]`. Only frame 0 is real visual context. The original overlap convention keeps four frames from non-final calls and five from the last; repeated boundary reconstruction is indexed at the same physical time. All scored outputs are predictions.
+- Ctrl-World: `/path/to/Ctrl-World/checkpoint-100000.pt`, single cam_high, 50 diffusion steps, native 25 Hz, 5 generated frames per call with 4-frame advance, native history indices `[0,0,-12,-9,-6,-3]`. Only frame 0 is real visual context. The original overlap convention keeps four frames from non-final calls and five from the last; repeated boundary reconstruction is indexed at the same physical time. All scored outputs are predictions.
 - Ctrl's SVD `added_time_fps=7` is the checkpoint's trained conditioning value, distinct from source trajectory frequency. Do not change it to 25 or 50 without a separate protocol.
 - Actual checkpoint hashes, generation settings, sampled source frame IDs, recursive history indices and saved RGB hashes are retained. The current Ctrl checkpoint has **not** been proven identical to the weights behind the historical paper row.
 
@@ -46,7 +46,7 @@ bash scripts/run_python.sh -m torch.distributed.run --standalone --nproc_per_nod
   scripts/compare_rgb/replay_tokenworld.py --panel "$r/panel.json" --output "$r/pilot" --episode-indices "$ids"
 mkdir -p "$r/pilot_current"
 ln -s ../pilot/tokenworld "$r/pilot_current/tokenworld"
-PYTHON_BIN=/mnt/world_foundational_model/chuyao/venvs/tokenworld-ppu/bin/python \
+PYTHON_BIN=/path/to/ctrlworld-venv/bin/python \
   bash scripts/run_python.sh -m torch.distributed.run --standalone --nproc_per_node=2 \
   scripts/compare_rgb/replay_ctrlworld.py --panel "$r/panel.json" --output "$r/pilot_current" --episode-indices "$ids" --grid 25
 bash scripts/run_python.sh -m torch.distributed.run --standalone --nproc_per_node=2 \
@@ -63,7 +63,7 @@ Generation skips completed episodes only when checkpoint hashes and protocol mat
 The launcher never submits a scheduler job itself. It generates Token-World, generates Ctrl-World, scores both saved trajectories and validates exact **54,222-frame paired coverage**. The default selection is `all500`; `SELECTION=balanced100` explicitly selects the Table I subset. Ctrl uses the established legacy PPU venv with diffusers; Token-World and metrics use the release venv. Device visibility from the scheduler is preserved.
 
 ```bash
-cd /mnt/world_foundational_model/chuyao/TokenWorld-release
+cd /path/to/Token-World
 # Reuse the already completed8 pilot episodes; generate the remaining492.
 DRY_RUN=1 bash scripts/compare_rgb/run_8ppu.sh outputs/robotwin_rgb_all500_current_25hz
 bash scripts/compare_rgb/run_8ppu.sh outputs/robotwin_rgb_all500_current_25hz
@@ -106,7 +106,7 @@ The existing `run_8ppu.sh` command includes these metrics by default (`DISTRIBUT
 For trajectories already generated, run only post-processing:
 
 ```bash
-cd /mnt/world_foundational_model/chuyao/TokenWorld-release
+cd /path/to/Token-World
 NUM_PPUS=8 bash scripts/compare_rgb/score_distribution.sh outputs/robotwin_rgb_all500_current_25hz
 ```
 

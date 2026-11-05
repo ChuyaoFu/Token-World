@@ -1,6 +1,6 @@
 # RoboTwin RGB decoder diagnosis and improvement
 
-Remote checkout: `/mnt/world_foundational_model/chuyao/TokenWorld-release`.
+Remote checkout: `/path/to/Token-World`.
 All commands below run from that checkout using the PPU environment in `scripts/run_python.sh`.
 Results: `outputs/decoder_improvement_20261102/`. Baseline weights are never overwritten.
 
@@ -71,7 +71,7 @@ Use fresh output directories for preparation/training. Each diagnostic command r
 This launcher prints its exact command and uses all training episodes with on-the-fly frozen S-VAE decoding, rather than materializing a huge full merger cache.25% of updates draw from other simulator seeds; the remaining updates draw from the full original train split. No validation episode is sampled. Default:5000 steps, global batch32 RGB frames (8 ranks ×2 episodes ×2 frames), LR1e-5. It does not submit a scheduler job by itself.
 
 ```bash
-cd /mnt/world_foundational_model/chuyao/TokenWorld-release
+cd /path/to/Token-World
 DRY_RUN=1 bash scripts/decoder_improvement/train_8ppu.sh outputs/decoder_shape_full_8ppu_v1
 # Submit the following inside the established eight-PPU scheduler job:
 bash scripts/decoder_improvement/train_8ppu.sh outputs/decoder_shape_full_8ppu_v1

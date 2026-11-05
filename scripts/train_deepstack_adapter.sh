@@ -2,7 +2,7 @@
 set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
-IRASIM_ROOT="${IRASIM_ROOT:-/mnt/world_foundational_model/chuyao/IRASim}"
+IRASIM_ROOT="${IRASIM_ROOT:-$ROOT/../IRASim}"
 exec bash "$SCRIPT_DIR/run_python.sh" "$SCRIPT_DIR/train_deepstack_adapter.py" \
   --cache "${CACHE_ROOT:-$IRASIM_ROOT/cache/robotwin_all50_symmetric_qwen_svae_dim16_50hz}" \
   --raw-data-root "${RAW_DATA_ROOT:-$IRASIM_ROOT/robotdata/robotwin-success-fail-lerobot}" \

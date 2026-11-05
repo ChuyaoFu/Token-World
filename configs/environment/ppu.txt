@@ -41,3 +41,8 @@ PyYAML==6.0.2
 tqdm==4.67.1
 opencv-python-headless==4.11.0.86
 scipy==1.11.3
+
+# Validated public fresh install (scipy 1.11.3 compatibility).
+scikit-image==0.25.1
+omegaconf==2.4.0
+decord==0.6.0

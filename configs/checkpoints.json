@@ -26,6 +26,12 @@
       "path": "outputs/rgb_decoder_svae_d16_cam_high/decoder_epoch_0500.pt",
       "bytes": 1184382887,
       "sha256": "9e85e03e3b855703b0f0e898cdbc7b3b314cece97a1f85e9674207c75813e104"
+    },
+    {
+      "component": "world_model_config",
+      "path": "outputs/world_model_svae_d16_cam_high_100k/config.yaml",
+      "bytes": 2066,
+      "sha256": "9113ae5c391d3a1fa37824dda2268eba4c6fcfef69c6147d691079fcf26c3049"
     }
   ]
 }

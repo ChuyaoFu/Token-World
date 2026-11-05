@@ -18,7 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 codec = ["transformers", "av", "pandas", "pyarrow", "safetensors"]
-eval = ["omegaconf", "opencv-python-headless", "scipy", "scikit-image"]
+eval = ["omegaconf", "opencv-python-headless", "scipy", "scikit-image", "decord==0.6.0"]
 tracking = ["wandb"]
 test = ["pytest", "build"]
 

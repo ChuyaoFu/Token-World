@@ -32,11 +32,17 @@ bash scripts/setup_env.sh
 bash scripts/run_python.sh -c 'import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.device_count())'
 ```
 
+If the default PyPI endpoint is unreachable, select a reachable mirror, for example:
+
+```bash
+PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/ bash scripts/setup_env.sh
+```
+
 The installer creates `venv/` beside `scripts/`. Launchers locate this environment relative to the checkout and load `/usr/local/PPU_SDK/envsetup.sh`. Override `PPU_PYTHON` and `PPU_SDK_SETUP` for another SDK installation. Rebuild the venv if the checkout path changes. Training commands below use eight PPUs on one node and should be submitted with `bash` in scheduler jobs.
 
 ## Checkpoints and data
 
-[The release checkpoint manifest](configs/checkpoints.json) lists file sizes and SHA-256 values for the S-VAE, World Model, DeepStack adapter and RGB decoder. Weights are mirrored on [Hugging Face](https://huggingface.co/ChuyaoFu/Token-World) and [ModelScope](https://modelscope.cn/models/Zellovo/Token-World). Download into this checkout with either provider.
+[The release checkpoint manifest](configs/checkpoints.json) lists file sizes and SHA-256 values for the S-VAE, World Model, DeepStack adapter and RGB decoder, plus the required World Model `config.yaml`. Weights are mirrored on [Hugging Face](https://huggingface.co/ChuyaoFu/Token-World) and [ModelScope](https://modelscope.cn/models/Zellovo/Token-World). Download into this checkout with either provider.
 
 ```bash
 # Hugging Face
@@ -48,11 +54,27 @@ bash scripts/run_python.sh -m pip install 'modelscope-hub==0.4.3'
 bash scripts/run_python.sh scripts/download_checkpoints.py \
   --provider modelscope --repo-id Zellovo/Token-World --revision master
 
-# Check the four local files without downloading
+# Check all local weights and the required configuration without downloading
 bash scripts/run_python.sh scripts/download_checkpoints.py --verify-only
 ```
 
 Both mirrors contain the same original checkpoint bytes. The downloader verifies the pinned size and SHA-256 values before reporting success.
+
+## Minimal inference (one PPU)
+
+After installation and checkpoint download, run:
+
+```bash
+bash scripts/run_python.sh scripts/minimal_inference.py
+```
+
+This uses the small [bundled RoboTwin example](examples/robotwin/README.md), with no dataset download, policy bundle, Qwen download, simulator, or shared storage required. It starts from one cached `cam_high` latent and the initial robot state, replays 30 recorded actions in two 15-frame segments, carries the GRU state across the boundary, and resets cross-segment KV. All four released models are loaded: WM predicts latents, S-VAE reconstructs merger features, the adapter predicts three DeepStack layers, and the RGB decoder produces images.
+
+Outputs are `outputs/minimal_inference/prediction.gif`, `comparison.png` (recorded RGB versus WM decoded RGB at frames 15 and 30), `predictions.npz`, and `report.json`. This is a runnable inference smoke test, **not policy action inference, a closed-loop success test, or a paper metric evaluation**. It does not run the VLM encoder from RGB; the initial latent is included. The sample's original codec/cache provenance is documented alongside it.
+
+## Assets needed for full reproduction
+
+**The full LeRobot data export, latent cache/train statistics, QwenOFT policy bundle, simulator Python/Mesa runtime and baseline checkpoints are not included in the current model repositories.** The full training/evaluation commands below require these additional assets; they cannot currently be reproduced from only the four published model weights. Generic upstream RoboTwin data does not establish the exact episode mapping and split of this export.
 
 The RoboTwin export contains **4,999 trajectories across 50 tasks**, including 2,500 successes and 2,499 failures. The fixed split contains 4,499 training and 500 validation trajectories. Preserve the episode identifiers in `configs/robotwin/splits/seed3047.json`. Raw observations use three named camera streams and a 50 Hz time grid. See [the data contract](docs/data.md) for the expected LeRobot layout.
 
